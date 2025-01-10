@@ -62,7 +62,7 @@ const ModalArun = () => {
       debugger;
       setloader('loading');
       const url =
-        "https://tryscrumtest.vervebot.io//wp-json/contact-form-7/v1/contact-forms/7926/feedback";
+        "https://tryscrumlive.vervebot.io//wp-json/contact-form-7/v1/contact-forms/7926/feedback";
       const formData = new FormData();
       formData.append("your-name", state.name);
       formData.append("your-email", state.email);
@@ -84,7 +84,7 @@ const ModalArun = () => {
         if (checked) {
           setState({ name: "", email: "", phone:"", country:"", message:""});
           setSubmissionMessage(res.data.message);
-          // window.open("https://tryscrumtest.netlify.app/icp-ent.pdf", "_blank")
+          // window.open("https://tryscrumlive.netlify.app/icp-ent.pdf", "_blank")
           // window.open(
           //   downloadFile,
           //   "_blank" // <- This is what makes it open in a new window.

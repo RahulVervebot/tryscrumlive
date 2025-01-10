@@ -708,7 +708,7 @@ const PostTemplate = ({ data }) => {
       debugger;
       setloader("loading");
       const url =
-        "https://tryscrumtest.vervebot.io//wp-json/contact-form-7/v1/contact-forms/3477/feedback";
+        "https://tryscrumlive.vervebot.io//wp-json/contact-form-7/v1/contact-forms/3477/feedback";
       const formData = new FormData();
       formData.append("your-name", state.name + " " + coursename);
       formData.append("your-phone", state.phone);
@@ -780,7 +780,7 @@ const PostTemplate = ({ data }) => {
       debugger;
       setloader("loading");
       const url =
-        "https://tryscrumtest.vervebot.io//wp-json/contact-form-7/v1/contact-forms/6480/feedback";
+        "https://tryscrumlive.vervebot.io//wp-json/contact-form-7/v1/contact-forms/6480/feedback";
       const formData = new FormData();
       formData.append("bundle-name", state.bundlename);
       formData.append("bundle-email", state.bundleemail);

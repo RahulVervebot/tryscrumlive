@@ -72,7 +72,7 @@ const ModalICPACC = () => {
       debugger;
       setloader('loading');
       const url =
-        "https://tryscrumtest.vervebot.io//wp-json/contact-form-7/v1/contact-forms/6718/feedback";
+        "https://tryscrumlive.vervebot.io//wp-json/contact-form-7/v1/contact-forms/6718/feedback";
       const formData = new FormData();
       formData.append("your-name", state.name);
       formData.append("your-email", state.email);
@@ -95,7 +95,7 @@ const ModalICPACC = () => {
 
           setState({ name: "", email: "" });
           setSubmissionMessage(res.data.message);
-          // window.open("https://tryscrumtest.netlify.app/icp-acc.pdf", "_blank")
+          // window.open("https://tryscrumlive.netlify.app/icp-acc.pdf", "_blank")
           // window.open(
           //   downloadFile,
           //   "_blank" // <- This is what makes it open in a new window.

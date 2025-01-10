@@ -6,7 +6,7 @@ module.exports = {
  
       resolve: `gatsby-source-wordpress`,
       options: {
-        url:`https://tryscrumtest.vervebot.io/graphql`,
+        url:`https://tryscrumlive.vervebot.io/graphql`,
         schema: {
           perPage: 10,
           requestConcurrency: 2,
@@ -45,13 +45,6 @@ module.exports = {
         ],
       },
     },
-    // {
-    //   resolve: 'gatsby-plugin-tidio-chat',
-    //   options: {
-    //     tidioKey: 'pbzbewb3asra5xsnf82odlboexsbj64x',
-    //     enableDuringDevelop: true, // Optional. Disables Tidio chat widget when running Gatsby dev server. Defaults to true.
-    //   },
-    // },
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
