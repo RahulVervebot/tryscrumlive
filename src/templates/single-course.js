@@ -33,7 +33,7 @@ import catLogo from "../assets/images/icp-cat-logo.png";
 import calBannerImg from "../assets/images/leadership-combo.png";
 import leftImg from "../assets/images/left-side-img.png";
 import rightImg from "../assets/images/right-side-img.png";
-import CourseCategoryFilter from "../components/CourseCategoryFilter";
+import CourseCategoryFilter from "../components/CourseCategoryRelevant";
 // import icpaccBannerImg from "../assets/images/icp-acc-03.png"
 import icpaccBannerImg from "../assets/images/icp-acc-02-01-01.png";
 import icpcatBannerImg from "../assets/images/icp-cat-banner2.png";

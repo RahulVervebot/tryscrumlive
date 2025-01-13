@@ -663,61 +663,61 @@ else if (props.title === "Certified Agile Leadership -I") {
   )
 }
 
-// else {
+else {
 
-//     return (
-//       <div>
-//         <div className="text-center">
-//           <h3 className="course-details__title">
-//             Relevant Courses
-//           </h3>
-//         </div>
+    return (
+      <div>
+        <div className="text-center">
+          <h3 className="course-details__title">
+            Relevant Courses
+          </h3>
+        </div>
         
-//         <Carousel>
+        <Carousel>
         
-//           {data.allWpPost.nodes.map(value => {
-//             return (
+          {data.allWpPost.nodes.map(value => {
+            return (
             
-//               <Carousel.Item key={value.uri} interval={2000}>
-//             {  value.acfcoursePage.options.customUrl ?
-//                 <Link to={`/${value.acfcoursePage.options.customUrl}/`} itemProp="url" >
+              <Carousel.Item key={value.uri} interval={2000}>
+            {  value.acfcoursePage.options.customUrl ?
+                <Link to={`/${value.acfcoursePage.options.customUrl}/`} itemProp="url" >
 
-//                   <img className="d-block w-100"
-//                     src={value.featuredImage.node.mediaItemUrl}
-//                     alt="Blogs Images"
-//                   />
+                  <img className="d-block w-100"
+                    src={value.featuredImage.node.mediaItemUrl}
+                    alt="Blogs Images"
+                  />
 
-//                 </Link>
-// :
-// <Link to={value.uri} itemProp="url" >
+                </Link>
+:
+<Link to={value.uri} itemProp="url" >
 
-// <img className="d-block w-100"
-//   src={value.featuredImage.node.mediaItemUrl}
-//   alt="Blogs Images"
-// />
+<img className="d-block w-100"
+  src={value.featuredImage.node.mediaItemUrl}
+  alt="Blogs Images"
+/>
 
-// </Link>
-//             }
-//                 <Carousel.Caption>
+</Link>
+            }
+                <Carousel.Caption>
 
-//                 </Carousel.Caption>
-//                 { value.acfcoursePage.options.customUrl ?
-//                 <Link to={`/${value.acfcoursePage.options.customUrl}/`} itemProp="url" className="btn btn-danger explore-btn">Explore</Link>
+                </Carousel.Caption>
+                { value.acfcoursePage.options.customUrl ?
+                <Link to={`/${value.acfcoursePage.options.customUrl}/`} itemProp="url" className="btn btn-danger explore-btn">Explore</Link>
                
-//                 :
-//                 <Link to={value.uri} itemProp="url" className="btn btn-danger explore-btn">Explore</Link>
-//                 }
-//               </Carousel.Item>
+                :
+                <Link to={value.uri} itemProp="url" className="btn btn-danger explore-btn">Explore</Link>
+                }
+              </Carousel.Item>
 
-//             )
+            )
 
 
-//           })
-//           }
-//         </Carousel>
-//       </div>
-//     )
-//   }
+          })
+          }
+        </Carousel>
+      </div>
+    )
+  }
 
 
 };
