@@ -55,6 +55,7 @@ import BrochureCAL from "../components/BrochureCAL";
 import Cal2 from "../assets/images/new-logos/cal2.png";
 import Cspobanner from "../assets/images/new-logos/cspo.png";
 import Cspol from "../assets/images/new-logos/cspo.png";
+import PriceProgressBar from "../components/PricePrograss";
 
 // import "../../static/Team_coaching_Canvas_Portrait.pdf"
 ReactModal.setAppElement("#___gatsby");
@@ -1034,33 +1035,7 @@ const PostTemplate = ({ data }) => {
 
   let categoryValue = data.wpPost.categories.nodes[0].name;
 console.log('course.acfcoursePage.options.customMetaUrl', course.acfcoursePage.options.customMetaUrl)
-// useEffect(() => {
-//   const head = document.head;
-//   const customMetaUrl = course.acfcoursePage.options.customMetaUrl;
 
-//   if (customMetaUrl) {
-//     // Split the metaURL string into individual tags by using a regular expression
-//     const linkTags = customMetaUrl.match(/<link[^>]*>/g);
-
-//     if (linkTags) {
-//       linkTags.forEach((tag) => {
-//         const parser = new DOMParser();
-//         const parsedTag = parser.parseFromString(tag, 'text/html').head.firstChild;
-
-//         if (parsedTag) {
-//           //parsedTag.setAttribute('data-custom-meta', 'true'); // Mark for cleanup
-//           head.appendChild(parsedTag);
-//         }
-//       });
-//     }
-//   }
-
-//   return () => {
-//     // Cleanup by removing elements marked for deletion
-//     document.querySelectorAll('[data-custom-meta="true"]').forEach((el) => el.remove());
-//   };
-// }, [course.acfcoursePage.options.customMetaUrl]);
-  // Except Six Courses This Will Show Up
   if (
     course.title != "Professional Scrum Master (PSM I)" &&
     course.title != "Professional Scrum Product Owner(PSPO I)" &&
@@ -1107,6 +1082,7 @@ console.log('course.acfcoursePage.options.customMetaUrl', course.acfcoursePage.o
                             __html: course.acfcoursePage.options.heroContent,
                           }}
                    />
+                     <PriceProgressBar/>
                 </div>
               </div>
             </div>
@@ -1169,6 +1145,7 @@ console.log('course.acfcoursePage.options.customMetaUrl', course.acfcoursePage.o
                             className="course-one__category"
                             target="__blank"
                           >
+
                             TrustPilot Rating
                           </a>
                         </span>
@@ -2568,6 +2545,7 @@ console.log('course.acfcoursePage.options.customMetaUrl', course.acfcoursePage.o
                       src={rightImg}
                       style={{ width: "50%", height: "40%" }}
                     />
+                        <PriceProgressBar/>
                   </div>
                 </div>
               </div>
@@ -2579,7 +2557,7 @@ console.log('course.acfcoursePage.options.customMetaUrl', course.acfcoursePage.o
             </div>
           </div>
         </div>
-  
+    
        <section className="course-details" style={{fontFamily:"verdana"}}>
           <div className="container-fluid">
             <div className="row">
@@ -9856,6 +9834,7 @@ console.log('course.acfcoursePage.options.customMetaUrl', course.acfcoursePage.o
                       style={{ width: "50%", height: "40%" }}
                     />
                   </div>
+                 < PriceProgressBar/>
                 </div>
               </div>
               <div className="col-md-6">
