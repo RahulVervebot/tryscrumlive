@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { Link, graphql } from "gatsby";
-import Layout from "../components/Layout";
-import NavTwo from "../components/NavTwo";
-import Footer from "../components/Footer";
+import Layout from "../../components/Layout";
+import NavTwo from "../../components/header/NavIn";
+import Footer from "../../components/footer/InFooter";
 // import BlogArchive from "../components/BlogArchiveHeader";
-import blogImg from "../assets/images/socialbanners/blogs.png";
-import "../assets/css/searchbox.css"
-import Tagdata from "../components/Tagdata";
-import PageBanner from "../components/PageBanner";
-import banner from "../assets/images/blog-banner.jpg";
-
+import blogImg from "../../assets/images/socialbanners/blogs.png";
+import "../../assets/css/searchbox.css"
+import Tagdata from "../../components//country/Tagdata";
+import PageBanner from "../../components/PageBanner";
+import banner from "../../assets/images/blog-banner.jpg";
+import { useLocation } from "react-use";
 
 const BlogIndex = ({ data }) => {
   const returned = data.allWpNews.nodes
@@ -105,7 +105,7 @@ const BlogIndex = ({ data }) => {
   // const removeddata = returned.splice(indexuri,1)
   // console.log(removeddata)
 
-
+const location = useLocation();
 
   return (
 
@@ -146,6 +146,44 @@ const BlogIndex = ({ data }) => {
 
           <Tagdata />
 
+
+          {/* <div className="basic-multi-select-main">
+        {filterednewData.length >= limit ? (<><div className="cluster-inner">
+          {
+            filterednewData.map((post) => (
+              <>
+                <Link to={`/${post}`} className="button-tag"><div>{post}</div></Link>
+              </>
+            ))
+          }
+          <span className="more-button" onClick={setshowMore}>More Tags</span>
+        </div></>) : (<><div className="cluster-inner">
+          {filterednewData.map((post) => (
+            <>
+              <Link to={`/${post}`} className="button-tag"><div>{post}</div></Link>
+            </>
+          ))
+          }
+        </div></>)}
+        
+        <div className={showhideTag ? "tagdrawer2" : "tagdrawer"}>
+          <div className="" >
+            <div className="cluster-tags">
+              {newAllData.map((post) => (
+                <>
+                  <Link to={`/${post}`} className="button-tags"><div>{post}</div></Link>
+                </>
+              ))
+              }
+
+            </div>
+          </div>
+        </div>
+         </div> */}
+
+
+          {/*show more tag*/}
+
           <br />
 
           <ol style={{ listStyle: `none` }} className="">
@@ -160,7 +198,7 @@ const BlogIndex = ({ data }) => {
                       {foundUsers.map((post) => {
 
                         const title = post.title;
-                        const uri = post.uri;
+                        const uri = location.origin+"/in"+post.uri;
                         const media = post.featuredImage.node.mediaItemUrl;
 
                         // console.log("vgccc", .length);
@@ -174,10 +212,7 @@ const BlogIndex = ({ data }) => {
                                   <img src={media} alt="Blogs Images" className="img-fluid" />
                                 </Link>
                               </div>
-
                               <div className="blog-one__content text-centerhome">
-
-
                                 <Link to={uri}>
                                   <h1 className="blog-one__title heading4">
                                     <div dangerouslySetInnerHTML={{ __html: title }} />

@@ -64,6 +64,23 @@ const path = require(`path`)
           id
         }
       }
+        allWpArticles {
+        nodes {
+          tags {
+            nodes {
+              name
+            }
+          }
+          title
+          featuredImage {
+            node {
+              mediaItemUrl
+            }
+          }
+          uri
+          id
+        }
+      }
       allWpPost {
         nodes {
           categories {
@@ -145,9 +162,10 @@ const path = require(`path`)
   `)
 
   const posts = result.data.allWpNews.nodes
+  const articlespost = result.data.allWpArticles.nodes
+
   posts.forEach(post => {
     actions.createPage({
-      //path: uricoursepage,
       path: post.uri,
       component: require.resolve("./src/templates/post-template.js"),
       context: {
@@ -213,6 +231,68 @@ const path = require(`path`)
         postsPerPage,
       },
     })
+
+
+  //single articles template
+
+  articlespost.forEach(post => {
+    actions.createPage({
+      path: post.uri,
+      component: require.resolve("./src/templates/single-article-template"),
+      context: {
+        id: post.id,
+      },
+    })
+  })
+
+  //in post
+  articlespost.forEach(post => {
+    actions.createPage({
+      path: "in/"+post.uri,
+      component: require.resolve("./src/templates/country/single-article-template"),
+      context: {
+        id: post.id,
+      },
+    })
+  })
+
+
+  // for articles new pages creating:
+
+
+  await actions.createPage({
+    path: `articles`,
+    // use the blog post archive template as the page component
+    component: path.resolve(`./src/templates/articles-post-archive.js`),
+
+    // `context` is available in the template as a prop and
+    // as a variable in GraphQL.
+    context: {
+      // the index of our loop is the offset of which posts we want to display
+      // so for page 1, 0 * 10 = 0 offset, for page 2, 1 * 10 = 10 posts offset,
+      // etc
+      
+      // We need to tell the template how many posts to display too
+      postsPerPage,
+    },
+  })
+
+  await actions.createPage({
+    path: `in/articles`,
+    // use the blog post archive template as the page component
+    component: path.resolve(`./src/templates/country/articles-post-archive.js`),
+
+    // `context` is available in the template as a prop and
+    // as a variable in GraphQL.
+    context: {
+      // the index of our loop is the offset of which posts we want to display
+      // so for page 1, 0 * 10 = 0 offset, for page 2, 1 * 10 = 10 posts offset,
+      // etc
+      
+      // We need to tell the template how many posts to display too
+      postsPerPage,
+    },
+  })
 
   //Tags
   const tagAllData = result.data.allWpNews.nodes

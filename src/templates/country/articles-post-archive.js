@@ -1,25 +1,25 @@
 import React, { useState } from "react";
 import { Link, graphql } from "gatsby";
-import Layout from "../components/Layout";
-import NavTwo from "../components/NavTwo";
-import Footer from "../components/Footer";
+import Layout from "../../components/Layout";
+import NavTwo from "../../components/header/NavIn";
+import Footer from "../../components/footer/InFooter";
 // import BlogArchive from "../components/BlogArchiveHeader";
-import blogImg from "../assets/images/socialbanners/blogs.png";
-import "../assets/css/searchbox.css"
-import Tagdata from "../components/Tagdata";
-import PageBanner from "../components/PageBanner";
-import banner from "../assets/images/blog-banner.jpg";
-
+import blogImg from "../../assets/images/socialbanners/blogs.png";
+import "../../assets/css/searchbox.css"
+import Tagdata from "../../components//country/Tagdata";
+import PageBanner from "../../components/PageBanner";
+import banner from "../../assets/images/blog-banner.jpg";
+import { useLocation } from "react-use";
 
 const BlogIndex = ({ data }) => {
-  const returned = data.allWpNews.nodes
+  const returned = data.allWpArticles.nodes
   const [showhide, showhideValue] = useState("");
   const [showhideTag, showhideTagvalue] = useState("");
   const [name, setName] = useState('');
   const [foundUsers, setFoundUsers] = useState(returned);
 
   ////filteration data by tag//////
-  const tagAllData = data.allWpNews.nodes
+  const tagAllData = data.allWpArticles.nodes
   // console.log("tagAllData", tagAllData)
 
   const tagNewData = tagAllData.map(post => post.tags)
@@ -42,7 +42,6 @@ const BlogIndex = ({ data }) => {
 
   // console.log(filteredTagVal)
 
-
   /////remove repetiton in aaray
   let duplicate = filteredTagVal.map((post) => post.name)
 
@@ -53,20 +52,6 @@ const BlogIndex = ({ data }) => {
   const newData = removeDuplicates(duplicate)
 
 
-  ////show more 
-
-  // console.log(newData.length, "newDatalength")
-  // console.log(newData, "newDatalength")
-  // const limit = 7;
-  // const newAllData = newData;
-  // const filterednewData = newAllData.splice(0, limit);
-  //  console.log(newData, "newData")
-  // console.log(filterednewData, "filterednewData")
-
-
-
-
-  //////filteration data by searchbox
   const filtered = (e) => {
     const keyword = e.target.value;
 
@@ -117,13 +102,13 @@ const BlogIndex = ({ data }) => {
 
         <NavTwo />
         <div className="blog-scroll">
-          <PageBanner title_1="Blogs" title="The tryScrum blogs" image={banner} uri={"blogs"} padding={8} icon={<i class="fa fa-search" aria-hidden="true"></i>} search={() => showhideValue(s => !s)}/>
+          <PageBanner title_1="Blogs" title="Articles" image={banner} uri={"blogs"} padding={8} icon={<i class="fa fa-search" aria-hidden="true"></i>} search={() => showhideValue(s => !s)}/>
           {/* <BlogArchive title="The tryScrum Blogs" icon={<i class="fa fa-search" aria-hidden="true"></i>} search={() => showhideValue(s => !s)} /> */}
           <div className={showhide ? "drawer2" : "drawer"} >
             <div id="search" class="searchbox">
               <div class="containers text-center">
 
-                <h3>Search the Blog</h3>
+                <h3>Search Articles</h3>
 
                 <div class="content-narrow">
                   <div className='input-box'>
@@ -300,14 +285,8 @@ export default BlogIndex
 
 export const pageQuery = graphql`
   query WordPressPostArchive1 {
-    allWpNews(sort: {fields: date, order: DESC}){
+    allWpArticles(sort: {fields: date, order: DESC}){
       nodes {
-        author_name {
-          tagName
-          author
-          fieldGroupName
-          filterByTagName
-        }
         excerpt
         uri
         date(formatString: "MMMM DD, YYYY")

@@ -22,16 +22,8 @@ const BlogIndex = ({ data }) => {
 
   const posts = data.allWpPost.nodes || []
 
-  // const { data } = props
   const allPosts = data.allWpPost.nodes
 
-  // courses.map(value =>{
-  //   const arr = value.uri.filter(e => e !== '/courses');
-  //   console.log(arr);
-  // })
-
-  // const arr = courses.uri.filter(e => e !== '/courses');
-  // console.log(arr);
 
   const emptyQuery = ""
 
@@ -57,28 +49,7 @@ const BlogIndex = ({ data }) => {
     "Explore our online and In-Person training to help you succeed with agile"
   const myDesc =
     "Explore our Agile courses to foster experiential learning through practical and actionable advice, tips andreal-world examples for building a capable and resilient Organisation."
-    // useEffect(() => {
-    //   // Define the link elements manually
-    //   const linkUS = document.createElement("link");
-    //   linkUS.rel = "alternate";
-    //   linkUS.hreflang = "en-US";
-    //   linkUS.href = "https://www.tryscrum.com/certifications/";
-  
-    //   const linkIN = document.createElement("link");
-    //   linkIN.rel = "alternate";
-    //   linkIN.hreflang = "en-IN";
-    //   linkIN.href = "https://www.tryscrum.com/in/certifications/";
-  
-    //   // Append to head
-    //   document.head.appendChild(linkUS);
-    //   document.head.appendChild(linkIN);
-  
-    //   // Cleanup function to remove the elements when the component unmounts
-    //   return () => {
-    //     document.head.removeChild(linkUS);
-    //     document.head.removeChild(linkIN);
-    //   };
-    // }, []);
+
   if (!courses.length) {
     return (
       <Layout
@@ -93,12 +64,6 @@ const BlogIndex = ({ data }) => {
     )
   }
 
-  // console.log(returned)
-  // add backslash before write uri
-  // const indexuri = returned.findIndex(x => x.title ==="Bundle Courses");
-  // console.log(indexuri)
-  // const removeddata = returned.splice(indexuri,1)
-  // console.log(removeddata)
 
   return (
     <>
@@ -112,62 +77,6 @@ const BlogIndex = ({ data }) => {
         <CourseArchive title="tryScrum Courses" />
        <CoursePages/>
        <CourseMobile/>
-        {/* <section className="course-one course-page">
-          <div className="container">
-            <div className="row" style={{height:"100%"}}>
-              {returned.map(post => {
-                const title = post.title
-                const uri = post.uri
-                const media = post.featuredImage.node.mediaItemUrl
-                console.log("post", post)
-
-                return (
-                  <div className="col-xl-4 col-lg-4 col-md-6 col-xs-12" >
-                    <div className="m-2 border h-100">
-                      <div className="course-one__image">
-                        <Link to={uri}>
-                          <img src={media} alt="Course Image" width="100%"/>
-                        </Link>
-                        <i className="far fa-heart"></i>
-                      </div>
-
-                      <div className="position-relative p-4">
-                        <Link to={uri}>
-                          <h1 className="course-one__title py-4">{post.title}</h1>
-                        </Link>
-
-                        <div className="course-one__stars">
-                          <span className="course-one__stars-wrap">
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                          </span>
-                          <span className="course-one__count">
-                            <a
-                              href={post.acfcoursePage.options.trustPilotRating}
-                              className="course-one__category"
-                              target="__blank"
-                            >
-                              TrustPilot Rating
-                            </a>
-                          </span>
-                        </div>
-                        <a href={uri}>
-                          <p className="course-one__link_course">
-                            Read About Course
-                          </p>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
-          </div>
-        </section> */}
-
         <Footer />
       </Layout>
     </>
