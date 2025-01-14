@@ -1,7 +1,6 @@
 const path = require(`path`)
 // const chunk = require(`lodash/chunk`)
 // const { Console } = require("console")
-// const { post } = require("jquery")
 /**
  * exports.createPages is a built-in Gatsby Node API.
  * It's purpose is to allow you to create pages for your site! 💡
