@@ -55,7 +55,7 @@ import BrochureCAL from "../components/BrochureCAL";
 import Cal2 from "../assets/images/new-logos/cal2.png";
 import Cspobanner from "../assets/images/new-logos/cspo.png";
 import Cspol from "../assets/images/new-logos/cspo.png";
-import PriceProgressBar from "../components/PricePrograss";
+// import PriceProgressBar from "../components/PricePrograss";
 
 // import "../../static/Team_coaching_Canvas_Portrait.pdf"
 ReactModal.setAppElement("#___gatsby");
@@ -1082,7 +1082,7 @@ console.log('course.acfcoursePage.options.customMetaUrl', course.acfcoursePage.o
                             __html: course.acfcoursePage.options.heroContent,
                           }}
                    />
-                     <PriceProgressBar/>
+                     {/* <PriceProgressBar/> */}
                 </div>
               </div>
             </div>
@@ -2545,7 +2545,7 @@ console.log('course.acfcoursePage.options.customMetaUrl', course.acfcoursePage.o
                       src={rightImg}
                       style={{ width: "50%", height: "40%" }}
                     />
-                        <PriceProgressBar/>
+                        {/* <PriceProgressBar/> */}
                   </div>
                 </div>
               </div>
@@ -9834,7 +9834,7 @@ console.log('course.acfcoursePage.options.customMetaUrl', course.acfcoursePage.o
                       style={{ width: "50%", height: "40%" }}
                     />
                   </div>
-                 < PriceProgressBar/>
+                 {/* < PriceProgressBar/> */}
                 </div>
               </div>
               <div className="col-md-6">

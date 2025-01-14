@@ -9,7 +9,6 @@ import PageHeaderBlog from "../components/PageHeaderArticles";
 import lp0 from "../assets/images/slider-icon.png";
 import TalkyardCommentsIframe from '@debiki/gatsby-plugin-talkyard';
 
-
 export const query = graphql`
   query($id: String!) {
 
