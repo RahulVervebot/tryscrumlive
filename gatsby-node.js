@@ -370,13 +370,7 @@ const path = require(`path`)
 
 //categories link
 const coursesCategory = result.data.allWpCourseCategory.nodes
-//result.data.allWpCourseCategory.nodes.course_categories.coursesIncludes.courseDetails.url
 
-  // actions.createPage({
-  //   path:  `certifications/agile`,
-  //   component: require.resolve("./src/templates/categories.js"),
-
-  // })
 
   coursesCategory.forEach(item => {
     const incoursecategory = item.course_categories.coursesIncludes.courseDetails.url;
