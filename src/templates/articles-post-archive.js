@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 import blogImg from "../assets/images/socialbanners/blogs.png";
 import "../assets/css/searchbox.css"
 import Tagdata from "../components/Tagdata";
-import PageBanner from "../components/PageBanner";
+import PageBanner from "../components/ArticleBanner";
 import banner from "../assets/images/blog-banner.jpg";
 
 
@@ -96,14 +96,10 @@ const BlogIndex = ({ data }) => {
 
     <>
 
-      {/* <Layout pageTitle="Practical and actionable writings to help you succeed with Agile"  metaDesc="Explore our blogs to gain practical and actionable tips from our coaches to help you expand your repertoire about Agility." pageName="blogs">  */}
-
       <Layout pageTitle={myTitle} metaDesc={myDesc} pageName={blogImg} pageloc="individual">
-
         <NavTwo />
         <div className="blog-scroll">
           <PageBanner title_1="Blogs" title="Articles" image={banner} uri={"blogs"} padding={8} icon={<i class="fa fa-search" aria-hidden="true"></i>} search={() => showhideValue(s => !s)}/>
-          {/* <BlogArchive title="The tryScrum Blogs" icon={<i class="fa fa-search" aria-hidden="true"></i>} search={() => showhideValue(s => !s)} /> */}
           <div className={showhide ? "drawer2" : "drawer"} >
             <div id="search" class="searchbox">
               <div class="containers text-center">

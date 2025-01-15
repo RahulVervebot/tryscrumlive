@@ -7,7 +7,7 @@ import Footer from "../../components/footer/InFooter";
 import blogImg from "../../assets/images/socialbanners/blogs.png";
 import "../../assets/css/searchbox.css"
 import Tagdata from "../../components//country/Tagdata";
-import PageBanner from "../../components/PageBanner";
+import PageBanner from "../../components/country/ArticleBanner";
 import banner from "../../assets/images/blog-banner.jpg";
 import { useLocation } from "react-use";
 
