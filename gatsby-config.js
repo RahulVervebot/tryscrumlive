@@ -1,4 +1,3 @@
-
 module.exports = {
 
   plugins: [
@@ -23,8 +22,6 @@ module.exports = {
         verbose: true
       },
     },
-  
-
 
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

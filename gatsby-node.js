@@ -80,6 +80,7 @@ const path = require(`path`)
           id
         }
       }
+        
       allWpPost {
         nodes {
           categories {
@@ -247,7 +248,7 @@ const path = require(`path`)
   //in post
   articlespost.forEach(post => {
     actions.createPage({
-      path: "in/"+post.uri,
+      path: "in"+post.uri,
       component: require.resolve("./src/templates/country/single-article-template"),
       context: {
         id: post.id,

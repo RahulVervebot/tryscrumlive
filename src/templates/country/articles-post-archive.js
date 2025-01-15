@@ -155,7 +155,7 @@ const BlogIndex = ({ data }) => {
                             <div className="blog-one__single row-eq-height">
 
                               <div className="blog-one__image">
-                                <Link to={uri}>
+                                <Link to={"/in"+uri}>
                                   <img src={media} alt="Blogs Images" className="img-fluid" />
                                 </Link>
                               </div>
@@ -163,7 +163,7 @@ const BlogIndex = ({ data }) => {
                               <div className="blog-one__content text-centerhome">
 
 
-                                <Link to={uri}>
+                                <Link to={"/in"+uri}>
                                   <h1 className="blog-one__title heading4">
                                     <div dangerouslySetInnerHTML={{ __html: title }} />
                                   </h1>
@@ -189,7 +189,7 @@ const BlogIndex = ({ data }) => {
                                   </div>
 
                                   <div className="col-lg-4">
-                                    <Link to={uri} itemProp="url" >
+                                    <Link to={"/in"+uri} itemProp="url" >
                                       <p className="blog-one__link readbutton" >
                                         Read
                                       </p>

@@ -9,7 +9,6 @@ import PageHeaderBlog from "../../components/PageHeaderArticles";
 import lp0 from "../../assets/images/slider-icon.png";
 import TalkyardCommentsIframe from '@debiki/gatsby-plugin-talkyard';
 
-
 export const query = graphql`
   query($id: String!) {
 
@@ -33,7 +32,7 @@ export const query = graphql`
         id
         guid
         featuredImage {
-         node {
+          node {
             mediaItemUrl
           }
         }
@@ -53,27 +52,27 @@ const PostTemplate = ({ data }) => {
 
 
 
-  const recentblogtitle = data.allWpNews.nodes;
+  const recentblogtitle = data.allWpArticles.nodes;
 
   console.log("recent", recentblogtitle)
 
-  const title = data.wpNews.seo.title;
-  const metadesc = data.wpNews.seo.metaDesc;
+  const title = data.wpArticles.seo.title;
+  const metadesc = data.wpArticles.seo.metaDesc;
 
-  const myuri = data.wpNews.uri;
+  const myuri = data.wpArticles.uri;
   console.log("blog uri is", myuri);
 
-  const myid = data.wpNews.id;
+  const myid = data.wpArticles.id;
   // console.log("blog id is", myid);
 
   let disqusConfig = {
     url: `https://www.tryscrum.com${myuri}`,
-    identifier: data.wpNews.id,
-    title: data.wpNews.title,
+    identifier: data.wpArticles.id,
+    title: data.wpArticles.title,
   }
 
-  const post = data.wpNews;
-  const posttitle = data.wpNews.title;
+  const post = data.wpArticles;
+  const posttitle = data.wpArticles.title;
   const media = post.featuredImage.node.mediaItemUrl;
   const postid = post.guid.slice(-4);
 
@@ -202,9 +201,6 @@ const PostTemplate = ({ data }) => {
   };
 
 
-
-
-
   // console.log("guid is", postid)
 
   const ACTION_URL = `https://tryscrumlive.vervebot.io/wp-json/wp/v2/comments`;
@@ -291,51 +287,9 @@ const PostTemplate = ({ data }) => {
   return (
     <div>
       <Layout pageTitle={title} metaDesc={metadesc} pageName={media} pageloc="individual">
-        {/* <Helmet>
-          <meta property='og:image' content={media} />
-          <meta property="og:description" content={posttitle} />
-          <meta property="og:description" content={posttitle} />
-          <meta name="twitter:image" content={media} />
-        </Helmet> */}
-
-        {/* <Helmet>
-
-        <html lang="en" />
-    
-        <meta name="google-site-verification" content="ylDTqVy_N1ll6kX2-LK_dN3K0WgfyVPfMFYCWCFoMkQ" />
-
-        <title>The tryScrum Blogs</title>
-
-        <meta charSet="UTF-8" />
-        <meta name="description" content='Explore our blogs to gain practical and actionable tips from our coaches to help you expand your repertoire about Agility.' />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-        <link rel="apple-touch-icon" sizes="180x180" href={appleTouch} />
-        <link rel="icon" type="image/png" sizes="32x32" href={fav32} />
-        <link rel="icon" type="image/png" sizes="16x16" href={fav16} />
-
-        <meta property='og:locale' content='en_US' />
-        <meta property='og:type' content='website' />
-        <meta property='og:title' content='Practical and actionable writings to help you succeed with Agile' />
-        <meta property='og:description' content='Explore our blogs to gain practical and actionable tips from our coaches to help you expand your repertoire about Agility.' /> 
-        <meta property='og:url' content='https://tryscrum.com' />
-        <meta property='og:image' content={ blogsBanner } />
-
-        <meta name="twitter:card" content="Professional Scrum Certification" />
-        <meta property="twitter:domain" content="https://tryscrum.com" />
-        <meta property="twitter:url" content="https://tryscrum.com" />
-        <meta name="twitter:title" content='Practical and actionable writings to help you succeed with Agile' />
-        <meta name="twitter:description" content='Explore our blogs to gain practical and actionable tips from our coaches to help you expand your repertoire about Agility.' />
-        <meta name="twitter:image" content={ blogsBanner } /> 
-        
-        <link
-          href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,500i,600,700,800%7CSatisfy&display=swap"
-          rel="stylesheet"
-        />
-      </Helmet> */}
 
         <NavTwo />
-        <PageHeaderBlog title="Blog" />
+        <PageHeaderBlog title="Article" />
 
         <section className="blog-details">
 
@@ -353,33 +307,6 @@ const PostTemplate = ({ data }) => {
 
                     <div className="blog-one__meta">
 
-                      {/* <a
-                    data-toggle="tooltip"
-                    data-placement="top"
-                    title=""
-                    href="#none"
-                    data-original-title="Posted On Jan 19"
-                  >
-                    <i className="fa fa-calendar-alt"></i>
-                  </a>
-                  <a
-                    data-toggle="tooltip"
-                    data-placement="top"
-                    title=""
-                    href="#none"
-                    data-original-title="No Comments"
-                  >
-                    <i className="fa fa-comments"></i>
-                  </a> */}
-                      {/* <a
-                    data-toggle="tooltip"
-                    data-placement="top"
-                    title=""
-                    href="#none"
-                    data-original-title="Posted By Admin"
-                  > 
-                  </a> */}
-
 
                       <div style={{ marginLeft: "5px", color: "black", fontFamily: "Roboto", fontWeight: 350 }} dangerouslySetInnerHTML={{ __html: post.author_name.author }} />
 
@@ -391,53 +318,6 @@ const PostTemplate = ({ data }) => {
                     <p className="blog-one__text makingblack">
                       <div className="dynamic-content-div lead" dangerouslySetInnerHTML={{ __html: post.content }} />
                     </p>
-
-                    {/* <TalkyardCommentsIframe discussionId={myuri} /> */}
-
-                    {/* Old Comments System */}
-                    {/* <CommentCount config={disqusConfig} placeholder={'...'} />
-                <Disqus config={disqusConfig} /> */}
-
-
-
-                    {/* <div>
-                  <h2 id="CommentsHeading">Post a comment</h2>
-                 
-                  <form onSubmit={handleSubmit.bind(this)}>
-                      <input type="name" id="postid" value={postid} />
-                      <div>
-                        <label htmlFor="name">Name*</label>
-                        <input id="name" type="text" required disabled={formIsSubmitting} onChange={evt => setName(evt.target.value)} />
-                      </div>
-                      <div>
-                        <label htmlFor="email">Email*</label>
-                        <input
-                          id="email"
-                          type="email"
-                          required
-                          disabled={formIsSubmitting}
-                          onChange={evt => setEmail(evt.target.value)}
-                        />
-                      </div>
-                   
-                      <div>
-                        <label htmlFor="comment">Comment*</label>
-                        <textarea
-                          id="comment"
-                          rows="10"
-                          required
-                          disabled={formIsSubmitting}
-                          onChange={evt => setComment(evt.target.value)}
-                          value={comment}
-                        />
-                      </div>
-                      <input type="submit" value="Submit" />
-                    
-                  </form>
-              </div> */}
-
-
-
                   </div>
                 </div>
 
@@ -464,132 +344,13 @@ const PostTemplate = ({ data }) => {
                       <i className="fab fa-linkedin"></i>
                     </a>
 
-                    {/* <a href="https://tryscrumstudio.slack.com/" target="__blank">
-                      <i className="fab fa-slack"></i>
-                    </a>
-
-                    <a href="https://www.meetup.com/Scrum-Master-Studio/" target="__blank">
-                      <i className="fab fa-meetup"></i>
-                    </a>
-
-                    <a href="https://www.instagram.com/try_Scrum/" target="__blank">
-                      <i className="fab fa-instagram"></i>
-                    </a> */}
+          
 
                   </div>
                 </div>
 
                 <br />
 
-
-
-                {/* <div className="blog-details__author">
-              <div className="blog-details__author-image">
-                <img src={author1} alt="Awesome alter text" /> 
-              </div>
-              <div className="blog-details__author-content">
-                <h3>Christine Eve</h3>
-                <p>
-                  Lorem Ipsum is simply dummy text of the rinting and
-                  typesetting been the industry standard dummy text ever sincer
-                  condimentum purus. In non ex at ligula fringilla lobortis et
-                  not the aliquet.
-                </p>
-              </div>
-            </div> */}
-
-                {/* <h2 className="blog-details__content-title">2 Comments</h2>
-            <div className="comment-one">
-              <div className="comment-one__single">
-                <div className="comment-one__image">
-                  <div className="inner-block">
-                     <img src={comment1} alt="Awesome alter text" /> 
-                  </div>
-                </div>
-                <div className="comment-one__content">
-                  <div className="comment-one__content-top">
-                    <div className="comment-one__top-left">
-                      <h3 className="comment-one__author">
-                        Laquanda Bachmeier
-                      </h3>
-                      <p className="comment-one__date">
-                        20 April, 2019{" "}
-                        <span className="comment-one__date-sep">-</span> 4:00 pm
-                      </p>
-                      <p className="comment-one__text">
-                        Lorem Ipsum is simply dummy text of the rinting and
-                        typesetting been the industry standard dummy text ever
-                        sincer condimentum purus. In non ex at ligula fringilla
-                        lobortis et not the aliquet.
-                      </p>
-                    </div>
-                    <div className="comment-one__top-right">
-                      <a href="#none" className="thm-btn comment-one__reply">
-                        Reply
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="comment-one__single">
-                <div className="comment-one__image">
-                  <div className="inner-block">
-                     <img src={comment2} alt="Awesome alter text" /> 
-                  </div>
-                </div>
-                <div className="comment-one__content">
-                  <div className="comment-one__content-top">
-                    <div className="comment-one__top-left">
-                      <h3 className="comment-one__author">Vicente Elmore</h3>
-                      <p className="comment-one__date">
-                        20 April, 2019{" "}
-                        <span className="comment-one__date-sep">-</span> 4:00 pm
-                      </p>
-                      <p className="comment-one__text">
-                        Lorem Ipsum is simply dummy text of the rinting and
-                        typesetting been the industry standard dummy text ever
-                        sincer condimentum purus. In non ex at ligula fringilla
-                        lobortis et not the aliquet.
-                      </p>
-                    </div>
-                    <div className="comment-one__top-right">
-                      <a href="#none" className="thm-btn comment-one__reply">
-                        Reply
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> */}
-
-                {/* <h2 className="blog-details__content-title">Leave a Comment</h2>
-            <form action="#" className="reply-form">
-              <div className="row">
-                <div className="col-lg-6">
-                  <input
-                    type="text"
-                    placeholder="Your name"
-                    className="reply-form__field"
-                  />
-                </div>
-                <div className="col-lg-6">
-                  <input
-                    type="text"
-                    placeholder="Enter email"
-                    className="reply-form__field"
-                  />
-                </div>
-                <div className="col-lg-12">
-                  <textarea
-                    placeholder="Write message"
-                    className="reply-form__field"
-                  ></textarea>
-                  <button className="reply-form__btn thm-btn" type="submit">
-                    Submit Comment
-                  </button>
-                </div>
-              </div>
-            </form> */}
 
               </div>
               <div className="col-lg-4">
@@ -602,7 +363,7 @@ const PostTemplate = ({ data }) => {
                     </div>
 
                     <div style={{ display: 'inline-block', margin: '0 10px' }} >
-                      <h4> Recent Posts</h4>
+                      <h4> Recent Articles</h4>
                     </div>
 
 
@@ -633,9 +394,7 @@ const PostTemplate = ({ data }) => {
                                   {value.title}
                                 </Link>
 
-                                {/* <Link to="/blogs/challenges-for-shared-accountability/" >
-                          Challenges for Shared Accountability    
-                      </Link>   */}
+                              
 
                               </h4>
                             </div>
@@ -643,53 +402,7 @@ const PostTemplate = ({ data }) => {
 
                         )
                       })}
-                      {/* <div className="sidebar__post__single">
-                  <div className="sidebar__post-image">
-                    <div className="inner-block">
-                      <img src={lp2} alt="Awesome alter text" />
-                    </div>
-                  </div>
-                  <div className="sidebar__post-content">
-                    <h4 className="sidebar__post-title">
-                      <Link to="/blogs/winning-office-politics-3-tips-that-scrum-masters-can-use/">
-                          Winning Office Politics – 3 tips that Scrum Masters can use
-                      </Link>  
-                    
-                    </h4>
-                  </div>
-                  </div> 
-
-                  <div className="sidebar__post__single">
-                  <div className="sidebar__post-image">
-                    <div className="inner-block">
-                      <img src={lp3} alt="Awesome alter text" />
-                    </div>
-                  </div>
-                  <div className="sidebar__post-content">
-                    <h4 className="sidebar__post-title">
-                      <Link to="/blogs/who-is-a-product-owner-anyway/">
-                          Who is a Product Owner, anyway?
-                      </Link>  
-                    </h4>
-                  </div>
-                  </div>
-                      
-
-                  <div className="sidebar__post__single">
-                  <div className="sidebar__post-image">
-                    <div className="inner-block">
-                      <img src={lp4} alt="Awesome alter text" />
-                    </div>
-                  </div>
-                  <div className="sidebar__post-content">
-                    <h4 className="sidebar__post-title">
-                      <Link to="/blogs/guide-to-building-a-career-as-scrum-master/">
-                          Guide to Building a Career as Scrum Master
-                      </Link>  
-                    
-                    </h4>
-                  </div>
-                  </div> */}
+                     
 
                     </div>
 
@@ -778,62 +491,6 @@ const PostTemplate = ({ data }) => {
                     </form>
 
                   </div>
-
-
-
-
-
-
-                  {/* <div className="sidebar__single sidebar__category">
-                <h3 className="sidebar__title">Categories</h3>
-                <ul className="sidebar__category-list">
-                  <li className="sidebar__category-list-item">
-                    <a href="#none">Business</a>
-                  </li>
-                  <li className="sidebar__category-list-item">
-                    <a href="#none">Introductions</a>
-                  </li>
-                  <li className="sidebar__category-list-item">
-                    <a href="#none">One Page Template</a>
-                  </li>
-                  <li className="sidebar__category-list-item">
-                    <a href="#none">Parallax Effects</a>
-                  </li>
-                  <li className="sidebar__category-list-item">
-                    <a href="#none">New Technologies</a>
-                  </li>
-                  <li className="sidebar__category-list-item">
-                    <a href="#none">Video Backgrounds</a>
-                  </li>
-                </ul>
-              </div> */}
-              
-                  {/* <div className="sidebar__single sidebar__tags">
-                <h3 className="sidebar__title">Tags</h3>
-                <ul className="sidebar__tags-list">
-                  <li className="sidebar__tags-list-item">
-                    <a href="#none">Business,</a>
-                  </li>
-                  <li className="sidebar__tags-list-item">
-                    <a href="#none">Agency,</a>
-                  </li>
-                  <li className="sidebar__tags-list-item">
-                    <a href="#none">Technology,</a>
-                  </li>
-                  <li className="sidebar__tags-list-item">
-                    <a href="#none">Parallax,</a>
-                  </li>
-                  <li className="sidebar__tags-list-item">
-                    <a href="#none">Innovative,</a>
-                  </li>
-                  <li className="sidebar__tags-list-item">
-                    <a href="#none">Professional,</a>
-                  </li>
-                  <li className="sidebar__tags-list-item">
-                    <a href="#none">Experience,</a>
-                  </li>
-                </ul>
-              </div> */}
 
                 </div>
               </div>
