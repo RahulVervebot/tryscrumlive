@@ -15,8 +15,8 @@ export const query = graphql`
     allWpArticles(sort: {date: DESC}, limit: 4) {
       nodes {
         uri
+   date(formatString: "MMMM DD, YYYY")
         title
-        date
         featuredImage {
           node {
             mediaItemUrl
@@ -28,6 +28,7 @@ export const query = graphql`
     wpArticles(id: { eq: $id }) {
         title
         content
+      date(formatString: "MMMM DD, YYYY")
         uri
         id
         guid
@@ -311,6 +312,7 @@ const PostTemplate = ({ data }) => {
                       <div style={{ marginLeft: "5px", color: "black", fontFamily: "Roboto", fontWeight: 350 }} dangerouslySetInnerHTML={{ __html: post.author_name.author }} />
 
                     </div>
+                    <p className="blog-one__link" dangerouslySetInnerHTML={{ __html: post.date }} />
 
                     <h1 className="blog-one__title">
                       {post.title}

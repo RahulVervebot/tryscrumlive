@@ -16,7 +16,7 @@ export const query = graphql`
       nodes {
         uri
         title
-        date
+         date(formatString: "MMMM DD, YYYY")
         featuredImage {
           node {
             mediaItemUrl
@@ -31,6 +31,7 @@ export const query = graphql`
         uri
         id
         guid
+         date(formatString: "MMMM DD, YYYY")
         featuredImage {
           node {
             mediaItemUrl
@@ -49,8 +50,6 @@ export const query = graphql`
 `
 
 const PostTemplate = ({ data }) => {
-
-
 
   const recentblogtitle = data.allWpArticles.nodes;
 
@@ -117,7 +116,6 @@ const PostTemplate = ({ data }) => {
     // console.log(res.data, "res");
   };
 
-
   // For Form Submit
   const [state, setState] = useState({ name: "", email: "", phone: "", message: "" });
   const [loader, setloader] = useState('');
@@ -135,7 +133,6 @@ const PostTemplate = ({ data }) => {
     });
     setErrors({ ...errors, [name]: "" });
   };
-
   // For Form Submit
   const submitHandler = async (e) => {
 
@@ -200,7 +197,6 @@ const PostTemplate = ({ data }) => {
     // console.log(res.data.message, "res");
   };
 
-
   // console.log("guid is", postid)
 
   const ACTION_URL = `https://tryscrumlive.vervebot.io/wp-json/wp/v2/comments`;
@@ -211,25 +207,12 @@ const PostTemplate = ({ data }) => {
   const [formSubmittedSuccessfully, setformSubmittedSuccessfully] = useState(false)
   const [formSubmittedFailed, setformSubmittedFailed] = useState(false)
 
-
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [comment, setComment] = useState('')
 
-
   const handleSubmit = (evt) => {
     evt.preventDefault();
-
-    // console.log("value in form post");
-    // console.log(name);
-    // console.log(email);
-    // console.log(comment);
-
-    // const {slug} = this.props;
-
-    // navigate(`/${slug}#CommentsHeading`);
-
-    // const [postId, name, email, website, comment] = evt.target.elements;
 
     const sendData = JSON.stringify({
       author_name: name,
@@ -238,7 +221,6 @@ const PostTemplate = ({ data }) => {
       post: postid.value,
       // author_url: website.value,
     });
-
     fetch(`https://tryscrumlive.vervebot.io/wp-json/wp/v2/comments?author_name=${name}&author_email=${email}&content=${comment}&post=${postid}`, {
       method: 'POST',
       headers: {
@@ -258,7 +240,6 @@ const PostTemplate = ({ data }) => {
           //   textAreaValue: '',
           // });
         }
-
         return response.json();
       })
       .then(object => {
@@ -277,23 +258,15 @@ const PostTemplate = ({ data }) => {
       });
   }
 
-
-
-
   const getUrl = `https://tryscrum.com/${myuri}`
   console.log(getUrl, "geturl")
-
 
   return (
     <div>
       <Layout pageTitle={title} metaDesc={metadesc} pageName={media} pageloc="individual">
-
         <NavTwo />
         <PageHeaderBlog title="Article" />
-
         <section className="blog-details">
-
-
           <div className="container">
             <div className="row">
               <div className="col-lg-8">
@@ -301,17 +274,12 @@ const PostTemplate = ({ data }) => {
                   <div className="blog-one__image">
                     <img src={media} alt="" />
                   </div>
-
                   <div className="blog-one__content text-center">
-
-
                     <div className="blog-one__meta">
-
-
                       <div style={{ marginLeft: "5px", color: "black", fontFamily: "Roboto", fontWeight: 350 }} dangerouslySetInnerHTML={{ __html: post.author_name.author }} />
-
+                    
                     </div>
-
+                    <p className="blog-one__link" dangerouslySetInnerHTML={{ __html: post.date }} />
                     <h1 className="blog-one__title">
                       {post.title}
                     </h1>
@@ -507,7 +475,6 @@ const PostTemplate = ({ data }) => {
     </div>
 
   )
-
 }
 
 export default PostTemplate
