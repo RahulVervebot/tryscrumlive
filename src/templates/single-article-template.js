@@ -134,80 +134,16 @@ const PostTemplate = ({ data }) => {
     });
     setErrors({ ...errors, [name]: "" });
   };
-  const submitHandler = async (e) => {
 
-    e.preventDefault();
-    if (state.email && state.name && state.contactNumber && state.message) {
-      setloader('loading');
-        const url = "https://tryscrumlive.vervebot.io//wp-json/contact-form-7/v1/contact-forms/3477/feedback";
-        const formData = new FormData();
-        formData.append("your-name", state.name);
-        formData.append("your-email", state.email);
-        formData.append("your-contact", state.contactNumber);
-        formData.append("your-message", state.message);
-
-        const config = {
-            headers: {
-                "content-type": "application/x-www-form-urlencoded",
-            },
-        };
-
-        try {
-            const res = await axios.post(url, formData, config);
-            if (res.data.message) {
-                setSubmissionMessage("We appreciate your interest.");
-                setState({ name: "", email: "", contactNumber: "", message: "" });
-                setloader(res.data.message)
-            } else {
-                setSubmissionMessage("Please try again.");
-            }
-        } catch (error) {
-            setSubmissionMessage("An error occurred. Please try again.");
-        } finally {
-            setIsSubmitting(false);
-        }
-    } else {
-        let error = errors;
-        if (state.name === "") {
-            error = {
-                ...error,
-                name: "This is required",
-            };
-        }
-        if (state.email === "") {
-            // debugger;
-            error = {
-                ...error,
-                email: "This is required",
-            };
-        }
-        if (state.contactNumber === "") {
-            // debugger;
-            error = {
-                ...error,
-                contactNumber: "This is required",
-            };
-        }
-        if (state.message === "") {
-            // debugger;
-            error = {
-                ...error,
-                message: "This is required",
-            };
-        }
-        setErrors(error);
-    }
-};
   // For Form Submit
-  const submitHandlerold = async (e) => {
-
+  const submitHandler = async (e) => {
     e.preventDefault();
     if (state.email && state.name && state.phone && state.message) {
       debugger;
       setloader('loading');
-      const url = "https://tryscrumlive.vervebot.io//wp-json/contact-form-7/v1/contact-forms/3477/feedback";
+      const url = "https://tryscrumlive.vervebot.io//wp-json/contact-form-7/v1/contact-forms/3477/feedback?_wpcf7_unit_tag=wpcf7-e1a0ed5";
       const formData = new FormData();
-      formData.append("your-name", state.name + " Blog " + posttitle);
+      formData.append("your-name", state.name + " Article " + posttitle);
       formData.append("your-phone", state.phone);
       formData.append("your-email", state.email);
       formData.append("your-message", state.message);
