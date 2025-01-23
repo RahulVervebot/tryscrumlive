@@ -125,7 +125,7 @@ const BlogIndex = ({ data }) => {
             </div>
           </div>
 
-          <Tagdata />
+          {/* <Tagdata /> */}
 
           <br />
 
