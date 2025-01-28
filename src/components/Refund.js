@@ -20,35 +20,6 @@ const Support = () => {
               </div> */}
 
                 <div className="blog-one__content text-center">
-                  {/* <div className="blog-one__meta">
-                  <a
-                    data-toggle="tooltip"
-                    data-placement="top"
-                    title=""
-                    href="#none"
-                    data-original-title="Posted On Jan 19"
-                  >
-                    <i className="fa fa-calendar-alt"></i>
-                  </a>
-                  <a
-                    data-toggle="tooltip"
-                    data-placement="top"
-                    title=""
-                    href="#none"
-                    data-original-title="No Comments"
-                  >
-                    <i className="fa fa-comments"></i>
-                  </a>
-                  <a
-                    data-toggle="tooltip"
-                    data-placement="top"
-                    title=""
-                    href="#none"
-                    data-original-title="Posted By Admin"
-                  >
-                    <i className="fa fa-user"></i>
-                  </a>
-                </div> */}
 
                   <h2 className="blog-one__title">
                     tryScrum Refund Policy
@@ -80,7 +51,14 @@ const Support = () => {
                        If a cancellation is made by a delegate 10 days (or more) before the event, 30% of the total paid fee will be deducted, and the remaining amount will be refunded to the delegate. If a cancellation is made by a delegate within 10 days (or less) of the event, no refunds will be made.   
                     </li>
                     <br />
-
+                    <li style={{ listStyleType: "none" }}>
+                     <strong> For candidates opting for bundle bookings:</strong>
+                    </li>
+        <li> Refunds will not be processed for partially completed bundles.</li>
+      	<li>If a cancellation is requested before starting any course in the bundle, the refund will follow the standard policy outlined above, with 30% deducted for cancellations made 10 days or more before the event, and no refunds for cancellations made within 10 days or less of the event.</li>
+       <li>No refunds will be entertained after the completion of one or more courses in the bundle.</li>
+       <li style={{ listStyleType: "none" }}>
+  This policy ensures transparency and fairness while preventing misuse of the bundle booking discounts.</li>
                     <li style={{ listStyleType: "none" }}>
                      <strong> Cancellation & Refunds: Physical Training </strong>
                     </li>
@@ -129,137 +107,13 @@ const Support = () => {
                 </div>
 
               </div>
-
-
-
-
-
-              {/* <div className="blog-details__author">
-              <div className="blog-details__author-image">
-                <img src={author1} alt="Awesome alter text" />
+             <div>
               </div>
-              <div className="blog-details__author-content">
-                <h3>Christine Eve</h3>
-                <p>
-                  Lorem Ipsum is simply dummy text of the rinting and
-                  typesetting been the industry standard dummy text ever sincer
-                  condimentum purus. In non ex at ligula fringilla lobortis et
-                  not the aliquet.
-                </p>
-              </div>
-            </div> */}
-
-              {/* <h2 className="blog-details__content-title">2 Comments</h2>
-            <div className="comment-one">
-              <div className="comment-one__single">
-                <div className="comment-one__image">
-                  <div className="inner-block">
-                    <img src={comment1} alt="Awesome alter text" />
-                  </div>
-                </div>
-                <div className="comment-one__content">
-                  <div className="comment-one__content-top">
-                    <div className="comment-one__top-left">
-                      <h3 className="comment-one__author">
-                        Laquanda Bachmeier
-                      </h3>
-                      <p className="comment-one__date">
-                        20 April, 2019{" "}
-                        <span className="comment-one__date-sep">-</span> 4:00 pm
-                      </p>
-                      <p className="comment-one__text">
-                        Lorem Ipsum is simply dummy text of the rinting and
-                        typesetting been the industry standard dummy text ever
-                        sincer condimentum purus. In non ex at ligula fringilla
-                        lobortis et not the aliquet.
-                      </p>
-                    </div>
-                    <div className="comment-one__top-right">
-                      <a href="#none" className="thm-btn comment-one__reply">
-                        Reply
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="comment-one__single">
-                <div className="comment-one__image">
-                  <div className="inner-block">
-                    <img src={comment2} alt="Awesome alter text" />
-                  </div>
-                </div>
-                <div className="comment-one__content">
-                  <div className="comment-one__content-top">
-                    <div className="comment-one__top-left">
-                      <h3 className="comment-one__author">Vicente Elmore</h3>
-                      <p className="comment-one__date">
-                        20 April, 2019{" "}
-                        <span className="comment-one__date-sep">-</span> 4:00 pm
-                      </p>
-                      <p className="comment-one__text">
-                        Lorem Ipsum is simply dummy text of the rinting and
-                        typesetting been the industry standard dummy text ever
-                        sincer condimentum purus. In non ex at ligula fringilla
-                        lobortis et not the aliquet.
-                      </p>
-                    </div>
-                    <div className="comment-one__top-right">
-                      <a href="#none" className="thm-btn comment-one__reply">
-                        Reply
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> */}
-
-              <div>
-              </div>
-
-
-              {/* <form action="#" className="reply-form">
-              <div className="row">
-                <div className="col-lg-6">
-                  <input
-                    type="text"
-                    placeholder="Your name"
-                    className="reply-form__field"
-                  />
-                </div>
-                
-                <div className="col-lg-12">
-                    
-                   <textarea
-                    placeholder="Write message"
-                    className="reply-form__field"
-                  ></textarea> 
-                  <br/>
-                  <button className="reply-form__btn thm-btn" type="submit">
-                    Download
-                  </button>
-                </div>
-              </div>
-            </form> */}
-
-
-
             </div>
 
             <div className="col-lg-4">
               <div className="sidebar">
 
-                {/* <div className="sidebar__single sidebar__search">
-                <form action="#" className="sidebar__search-form">
-                  <input
-                    type="text"
-                    name="search"
-                    placeholder="Search here..."
-                  />
-                  <button type="submit">
-                    <i className="fa fa-search"></i>
-                  </button>
-                </form>
-              </div> */}
 
                 <div className="sidebar__single sidebar__post">
 
@@ -349,56 +203,6 @@ const Support = () => {
                   </div>
                 </div>
 
-                {/* <div className="sidebar__single sidebar__category">
-                <h3 className="sidebar__title">Categories</h3>
-                <ul className="sidebar__category-list">
-                  <li className="sidebar__category-list-item">
-                    <a href="#none">Business</a>
-                  </li>
-                  <li className="sidebar__category-list-item">
-                    <a href="#none">Introductions</a>
-                  </li>
-                  <li className="sidebar__category-list-item">
-                    <a href="#none">One Page Template</a>
-                  </li>
-                  <li className="sidebar__category-list-item">
-                    <a href="#none">Parallax Effects</a>
-                  </li>
-                  <li className="sidebar__category-list-item">
-                    <a href="#none">New Technologies</a>
-                  </li>
-                  <li className="sidebar__category-list-item">
-                    <a href="#none">Video Backgrounds</a>
-                  </li>
-                </ul>
-              </div> */}
-
-                {/* <div className="sidebar__single sidebar__tags">
-                <h3 className="sidebar__title">Tags</h3>
-                <ul className="sidebar__tags-list">
-                  <li className="sidebar__tags-list-item">
-                    <a href="#none">Scrum,</a>
-                  </li>
-                   <li className="sidebar__tags-list-item">
-                    <a href="#none">Agency,</a>
-                  </li> 
-                  <li className="sidebar__tags-list-item">
-                    <a href="#none">Technology,</a>
-                  </li>
-                  <li className="sidebar__tags-list-item">
-                    <a href="#none">Parallax,</a>
-                  </li>
-                  <li className="sidebar__tags-list-item">
-                    <a href="#none">Innovative,</a>
-                  </li>
-                  <li className="sidebar__tags-list-item">
-                    <a href="#none">Professional,</a>
-                  </li>
-                  <li className="sidebar__tags-list-item">
-                    <a href="#none">Experience,</a>
-                  </li>
-                </ul>
-              </div> */}
 
               </div>
             </div>
