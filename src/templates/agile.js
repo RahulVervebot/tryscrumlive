@@ -8417,7 +8417,7 @@ console.log('course.acfcoursePage.options.customMetaUrl', course.acfcoursePage.o
             dangerouslySetInnerHTML={{
                             __html: course.acfcoursePage.options.heroBreadcrumb
                           }}
-             />
+             /> 
                   <p style={{ fontSize: "20px" }}
                   dangerouslySetInnerHTML={{
                             __html: course.acfcoursePage.options.heroContent,
