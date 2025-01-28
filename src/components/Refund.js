@@ -55,7 +55,7 @@ const Support = () => {
                      <strong> For candidates opting for bundle bookings:</strong>
                     </li>
         <li> Refunds will not be processed for partially completed bundles.</li>
-      	<li>If a cancellation is requested before starting any course in the bundle, the refund will follow the standard policy outlined above, with 30% deducted for cancellations made 10 days or more before the event, and no refunds for cancellations made within 10 days or less of the event.</li>
+      	<li>If a cancellation is requested before starting of first course in the bundle, the refund will follow the standard policy outlined above, with 30% deducted for cancellations made 10 days or more before the event, and no refunds for cancellations made within 10 days or less of the event.</li>
        <li>No refunds will be entertained after the completion of one or more courses in the bundle.</li>
        <li style={{ listStyleType: "none" }}>
   This policy ensures transparency and fairness while preventing misuse of the bundle booking discounts.</li>
