@@ -39,7 +39,7 @@ import icpaccBannerImg from "../assets/images/icp-acc-02-01-01.png";
 import icpcatBannerImg from "../assets/images/icp-cat-banner2.png";
 import icpentBannerImg from "../assets/images/icp-ent-banner.png";
 import bundleCourseBannerImg from "../assets/images/bundle-box-01.png";
-import csm2_02 from "../assets/images/csm2-02.png";
+import csm2_02 from "../assets/images/csm2-banner.png";
 import leftImgBundle from "../assets/images/left-side-white-bundle-page.png";
 import corporate from "../assets/images/corporate-table2-01.png";
 import csm_logo from "../assets/images/new-logos/csm.png";
@@ -53,7 +53,7 @@ import ModalCPENT from "../components/ModalICPENT";
 import ModalCPCAT from "../components/ModalICPCAT";
 import BrochureCAL from "../components/BrochureCAL";
 import Cal2 from "../assets/images/new-logos/cal2.png";
-import Cspobanner from "../assets/images/new-logos/cspo.png";
+import Cspobanner from "../assets/images/cspobanner.png";
 import Cspol from "../assets/images/new-logos/cspo.png";
 import PriceProgressBar from "../components/PricePrograss";
 
