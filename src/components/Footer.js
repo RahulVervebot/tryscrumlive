@@ -342,7 +342,7 @@ const Footer = () => {
               color: "#ffffff70",
             }}
           >
-            © Copyright 2023 tryScrum.com. All Rights Reserved.
+            © Copyright 2025 tryScrum.com. All Rights Reserved.
           </div>
         </footer>
 
