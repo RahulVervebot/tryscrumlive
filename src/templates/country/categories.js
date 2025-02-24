@@ -6,7 +6,6 @@ import NavTwo from "../../components/header/NavIn";
 import Footer from "../../components/footer/InFooter";
 import blogImg from "../../assets/images/socialbanners/blogs.png";
 import "../../assets/css/searchbox.css"
-import Tagdata from "../components/Tagdata";
 import NewCategoryBanner from "../../components/NewCategoryBanner";
 import banner from "../../assets/images/blog-banner.jpg";
 import { useLocation } from '@reach/router';
