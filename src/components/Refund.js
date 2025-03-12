@@ -45,7 +45,7 @@ const Support = () => {
                       tryScrum reserves the right to postpone/cancel an event because of insufficient enrollments, instructor illness or force majeure events (like floods, earthquakes, political instability, etc)
                     </li>
                     <li style={{ listStyleType: "none" }}>
-                        If tryScrum cancels an event, a 100% refund will be paid to the candidates. If tryScrum postpones the event, tryScrum will work with the candidates to arrange a different date that works for both candidates and the schedule of tryScrum.
+                      If tryScrum cancels an event, a 100% refund will be paid to the candidates within the same month of cancellations. If tryScrum postpones the event, tryScrum will work with the candidates to arrange a different date that works for both candidates and the schedule of tryScrum. Any refund requests post 45 days will not be processed due to Tax filings.
                     </li>
                     <li style={{ listStyleType: "none" }}>
                        If a cancellation is made by a delegate 10 days (or more) before the event, 30% of the total paid fee will be deducted, and the remaining amount will be refunded to the delegate. If a cancellation is made by a delegate within 10 days (or less) of the event, no refunds will be made.   
