@@ -47,6 +47,7 @@ import calcombo from "../assets/images/new-logos/cal.jpg";
 import ppdv from "../assets/images/ppdv.png";
 import ppdvsm from "../assets/images/ppdvsm.png";
 import pspbm from "../assets/images/pspbmsm.png";
+import anyversarybanner from "../assets/images/7th-Celebration.jpg"
 import { Backdrop, CircularProgress } from "@mui/material";
 
 const handleRedirect = () => {
