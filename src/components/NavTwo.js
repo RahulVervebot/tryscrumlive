@@ -935,11 +935,6 @@ class NavTwo extends Component {
                     </Link>
                     <ul className="sub-menu">
                       <li onClick={this.showHidetoggleclose}>
-                        <a href="https://regionalscrumgathering.tryscrum.com" target="_blank">
-                          Regional Scrum Gathering - Bengaluru
-                        </a>
-                      </li>
-                      <li onClick={this.showHidetoggleclose}>
                         <Link to="/studios">Studios</Link>
                       </li>
                       <li onClick={this.showHidetoggleclose}>
