@@ -96,7 +96,7 @@ const Support = () => {
                     </h4>
                     <br />
                     <h4 style={{ listStyleType: "none", color: "#012237" }}>
-                      Note: All refunds will be processed within 5 working days after the refund request is approved by tryScrum.
+                      Note: All refunds will be processed within 5 to 10 working days after the refund request is approved by tryScrum.
                     </h4>
 
                     <br />
