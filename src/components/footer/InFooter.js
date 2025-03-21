@@ -238,6 +238,11 @@ const Footer = () => {
                             Refund Policies
                           </a>
                         </li>
+                          <li>
+                          <a href="/terms-and-conditions" target="__blank">
+                            Terms and Conditions
+                          </a>
+                        </li>
                         {/* <li>
                         <a href="#">Cookie Policy</a>
                       </li> */}
