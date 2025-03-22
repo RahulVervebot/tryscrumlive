@@ -161,7 +161,7 @@ const CareerContent = () => {
               <p className="pb-0 lead">
                 <ul>
                   <li>
-                  <b>Get Rewarded:</b> Earn 1000 INR for every friend or colleague you refer who completes a workshop with us.
+                  <b>Get Rewarded:</b> Earn 1000 INR for every friend or colleague you refer who completes a workshop with us (*500 INR for CSM & CSPO).
                   </li>
                   <li>
                   <b>Simple Process:</b> Just fill out a quick referral form to get started.
