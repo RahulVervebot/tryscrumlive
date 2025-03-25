@@ -3,7 +3,6 @@ import ReactModal from "react-modal";
 import Carousel, { consts } from "react-elastic-carousel";
 import "./Chat/style.css";
 import "./Chat/townscript.css";
-import PriceProgressBar from "./../components/PricePrograss";
 import { set } from "lodash";
 
 ReactModal.setAppElement("#___gatsby");
@@ -224,6 +223,14 @@ class CourseEnrollTable extends React.Component {
     );
   }
 
+  // scrollToBottom() {
+  //   var element = document.getElementById("gatsby-focus-wrapper");
+  //   element.scrollIntoView({ behavior: "smooth" });
+  // }
+
+  // componentDidUpdate() {
+  //   this.scrollToBottom();
+  // }
 
   getUrlType2(value) {
     if (
@@ -232,7 +239,7 @@ class CourseEnrollTable extends React.Component {
       value.charAt(8) !== "f"
     ) {
       return (
-        <div className="App" style={{ fontFamily: "Arial, sans-serif", padding: "20px" }}>
+        <td>
           <button
             type="submit"
             className="enroll-button"
@@ -240,22 +247,21 @@ class CourseEnrollTable extends React.Component {
           >
             Enroll
           </button>
-        </div>
+        </td>
       );
     }
 
     if (value.charAt(8) === "f") {
       return (
-        <div className="App" style={{ fontFamily: "Arial, sans-serif", padding: "20px" }}>
+        <td>
           <button
             type="submit"
             className="enroll-button"
             onClick={() => window.open(value, "_blank")}
           >
-
             Enroll
           </button>
-        </div>
+        </td>
       );
     }
   }
@@ -267,7 +273,7 @@ class CourseEnrollTable extends React.Component {
       value.charAt(8) !== "f"
     ) {
       return (
-        <div className="App" style={{ fontFamily: "Arial, sans-serif", padding: "20px" }}>
+        <td>
           <button
             type="submit"
             className="enroll-button"
@@ -276,13 +282,13 @@ class CourseEnrollTable extends React.Component {
             {/* Enroll */}
             <div>{enrolltext}</div>
           </button>
-        </div>
+        </td>
       );
     }
 
     if (value.charAt(8) === "f") {
       return (
-        <div className="App" style={{ fontFamily: "Arial, sans-serif", padding: "20px" }}>
+        <td>
           <button
             type="submit"
             className="enroll-button"
@@ -291,7 +297,7 @@ class CourseEnrollTable extends React.Component {
             {/* Enroll */}
             {enrolltext}
           </button>
-        </div>
+        </td>
       );
     }
   }
@@ -651,7 +657,6 @@ class CourseEnrollTable extends React.Component {
                           {filtered.date1 == "Jan 10-10,1000"
                             ? "Coming Soon!"
                             : filtered.date1}
-                        
                         </li>
                       ) : (
                         <CourseInfoModal url={filtered?.courseinfo} />
@@ -701,56 +706,27 @@ class CourseEnrollTable extends React.Component {
                         <i class="fa fa-tag"></i>&nbsp;{" "}
                         <strike>{filtered.regularPrice}</strike> &nbsp;
                         {filtered.salePrice} &nbsp;{" "}
-                        {/* <span data-title="The price listed is only for Indian Markets. Please click the enroll button to know the prices for foreign markets.">
+                        <span data-title="The price listed is only for Indian Markets. Please click the enroll button to know the prices for foreign markets.">
                           <i class="fa fa-info-circle info-detail"></i>
-                        </span> */}
+                        </span>
                       </p>
                     </ul>
                     <center>
-      {filtered.salePrice.includes("INR") && course.title == "Certified Scrum Product Owner(CSPO)" && course.title == "Certified Scrum Product Owner(CSPO)" ? (
-     <PriceProgressBar course={course} date={filtered.date1} time={filtered.time1} location={filtered.location} courseprice={filtered.salePrice} />
-  ) :
-
-  filtered.url[0] == "E" |
-    filtered.url[0] == "e" ? (
-      <div className="App" style={{ fontFamily: "Arial, sans-serif", padding: "20px" }}>
-        <button
-          type="submit"
-          className="enroll-button"
-          id="example-widget-trigger"
-          onClick={() => this.eventBrite(filtered.url)}
-        >
-     
-          {filtered.enrolltext}
-        </button>
-      </div>
-    ) : (
-      // this.getUrlType2(filtered[2].url)
-      this.getUrlTypeNew(
-        filtered.url,
-        filtered.enrolltext
-      )
-    )
-  }
-                      {/* {filtered.url[0] == "E" || filtered.url[0] == "e" ? (
+                      {filtered.url[0] == "E" || filtered.url[0] == "e" ? (
                         <button
                           type="submit"
                           className="enroll-button"
                           id="example-widget-trigger"
                           onClick={() => this.eventBrite(filtered.url)}
                         >
-                      
+                          {/* Enroll */}
                           {filtered.enrolltext}
                         </button>
-                       
                       ) : (
-                     
+                        // this.getUrlType2(filtered[2].url)
                         this.getUrlTypeNew(filtered.url, filtered.enrolltext)
-                      )} */}
-                  
-                      
+                      )}
                     </center>
-                 
                   </div>
                 </div>
               ))}
@@ -893,60 +869,33 @@ class CourseEnrollTable extends React.Component {
                             <i class="fa fa-tag"></i>&nbsp;{" "}
                             <strike>{filtered.regularPrice}</strike> &nbsp;
                             {filtered.salePrice} &nbsp;{" "}
-                            {/* <span data-title="The price listed is only for Indian Markets. Please click the enroll button to know the prices for foreign markets.">
+                            <span data-title="The price listed is only for Indian Markets. Please click the enroll button to know the prices for foreign markets.">
                               <i className="fa fa-info-circle info-detail"></i>
-                            </span> */}
+                            </span>
                           </p>
                         </ul>
                         <center>
-                          {/* {filtered.url[0] == "E" || filtered.url[0] == "e" ? (
+                          {filtered.url[0] == "E" || filtered.url[0] == "e" ? (
                             <td>
-                        
                               <button
                                 type="submit"
                                 className="enroll-button"
                                 id="example-widget-trigger"
                                 onClick={() => this.eventBrite(filtered.url)}
                               >
-                               
+                                {/* Enroll */}
                                 {filtered.enrolltext}
                               </button>
                             </td>
                           ) : (
-                           
+                            // this.getUrlType2(filtered[2].url)
                             this.getUrlTypeNew(
                               filtered.url,
                               filtered.enrolltext
                             )
-                          )} */}
-    {filtered.salePrice.includes("INR") && course.title == "Certified Scrum Product Owner(CSPO)" ? (
-     <PriceProgressBar course={course} date={filtered.date1} time={filtered.time1} location={filtered.location} courseprice={filtered.salePrice} />
-  ) :
-
-  filtered.url[0] == "E" |
-    filtered.url[0] == "e" ? (
-      <div className="App" style={{ fontFamily: "Arial, sans-serif", padding: "20px" }}>
-        <button
-          type="submit"
-          className="enroll-button"
-          id="example-widget-trigger"
-          onClick={() => this.eventBrite(filtered.url)}
-        >
-     
-          {filtered.enrolltext}
-        </button>
-      </div>
-    ) : (
-      // this.getUrlType2(filtered[2].url)
-      this.getUrlTypeNew(
-        filtered.url,
-        filtered.enrolltext
-      )
-    )
-  }
+                          )}
                         </center>
                       </div>
-             
                     </div>
                   ))}
                 </Carousel>
@@ -1183,38 +1132,26 @@ class CourseEnrollTable extends React.Component {
                         <i class="fa fa-tag"></i>&nbsp;{" "}
                         <strike>{filtered.regularPrice}</strike> &nbsp;
                         {filtered.salePrice} &nbsp;{" "}
-                        {/* <span data-title="The price listed is only for Indian Markets. Please click the enroll button to know the prices for foreign markets.">
+                        <span data-title="The price listed is only for Indian Markets. Please click the enroll button to know the prices for foreign markets.">
                           <i className="fa fa-info-circle info-detail"></i>
-                        </span> */}
+                        </span>
                       </p>
                     </ul>
                     <center>
-
-                     {filtered.salePrice.includes("INR") && course.title == "Certified Scrum Product Owner(CSPO)" ? (
-     <PriceProgressBar course={course} date={filtered.date1} time={filtered.time1} location={filtered.location} courseprice={filtered.salePrice} />
-  ) :
-
-  filtered.url[0] == "E" |
-    filtered.url[0] == "e" ? (
-      <div className="App" style={{ fontFamily: "Arial, sans-serif", padding: "20px" }}>
-        <button
-          type="submit"
-          className="enroll-button"
-          id="example-widget-trigger"
-          onClick={() => this.eventBrite(filtered.url)}
-        >
-     
-          {filtered.enrolltext}
-        </button>
-      </div>
-    ) : (
-      // this.getUrlType2(filtered[2].url)
-      this.getUrlTypeNew(
-        filtered.url,
-        filtered.enrolltext
-      )
-    )
-  }
+                      {filtered.url[0] == "E" || filtered.url[0] == "e" ? (
+                        <button
+                          type="submit"
+                          className="enroll-button"
+                          id="example-widget-trigger"
+                          onClick={() => this.eventBrite(filtered.url)}
+                        >
+                          {/* Enroll */}
+                          {filtered.enrolltext}
+                        </button>
+                      ) : (
+                        // this.getUrlType2(filtered[2].url)
+                        this.getUrlTypeNew(filtered.url, filtered.enrolltext)
+                      )}
                     </center>
                   </div>
                 </div>
@@ -1368,13 +1305,13 @@ class CourseEnrollTable extends React.Component {
                                 <i class="fa fa-tag"></i>&nbsp;{" "}
                                 <strike>{filtered.regularPrice}</strike> &nbsp;
                                 {filtered.salePrice} &nbsp;{" "}
-                                {/* <span data-title="The price listed is only for Indian Markets. Please click the enroll button to know the prices for foreign markets.">
+                                <span data-title="The price listed is only for Indian Markets. Please click the enroll button to know the prices for foreign markets.">
                                   <i className="fa fa-info-circle info-detail"></i>
-                                </span> */}
+                                </span>
                               </p>
                             </ul>
                             <center>
-                              {/* {filtered.url[0] == "E" ||
+                              {filtered.url[0] == "E" ||
                               filtered.url[0] == "e" ? (
                                 <td>
                                   <button
@@ -1393,32 +1330,7 @@ class CourseEnrollTable extends React.Component {
                                   filtered.url,
                                   filtered.enrolltext
                                 )
-                              )} */}
-                        {filtered.salePrice.includes("INR") && course.title == "Certified Scrum Product Owner(CSPO)" ? (
-     <PriceProgressBar course={course} date={filtered.date1} time={filtered.time1} location={filtered.location} courseprice={filtered.salePrice} />
-  ) :
-
-  filtered.url[0] == "E" |
-    filtered.url[0] == "e" ? (
-      <div className="App" style={{ fontFamily: "Arial, sans-serif", padding: "20px" }}>
-        <button
-          type="submit"
-          className="enroll-button"
-          id="example-widget-trigger"
-          onClick={() => this.eventBrite(filtered.url)}
-        >
-     
-          {filtered.enrolltext}
-        </button>
-      </div>
-    ) : (
-      // this.getUrlType2(filtered[2].url)
-      this.getUrlTypeNew(
-        filtered.url,
-        filtered.enrolltext
-      )
-    )
-  }
+                              )}
                             </center>
                           </div>
                         </div>
@@ -1665,13 +1577,13 @@ class CourseEnrollTable extends React.Component {
                           <i class="fa fa-tag"></i>&nbsp;{" "}
                           <strike>{filtered.regularPrice}</strike> &nbsp;
                           {filtered.salePrice} &nbsp;{" "}
-                          {/* <span data-title="The price listed is only for Indian Markets. Please click the enroll button to know the prices for foreign markets.">
+                          <span data-title="The price listed is only for Indian Markets. Please click the enroll button to know the prices for foreign markets.">
                             <i className="fa fa-info-circle info-detail"></i>
-                          </span> */}
+                          </span>
                         </p>
                       </ul>
                       <center>
-                        {/* {filtered.url[0] == "E" || filtered.url[0] == "e" ? (
+                        {filtered.url[0] == "E" || filtered.url[0] == "e" ? (
                           <td>
                             <button
                               type="submit"
@@ -1679,39 +1591,14 @@ class CourseEnrollTable extends React.Component {
                               id="example-widget-trigger"
                               onClick={() => this.eventBrite(filtered.url)}
                             >
-                            
+                              {/* Enroll */}
                               {filtered.enrolltext}
                             </button>
                           </td>
                         ) : (
                           // this.getUrlType2(filtered[2].url)
                           this.getUrlTypeNew(filtered.url, filtered.enrolltext)
-                        )} */}
-             {filtered.salePrice.includes("INR") && course.title == "Certified Scrum Product Owner(CSPO)" ? (
-     <PriceProgressBar course={course} date={filtered.date1} time={filtered.time1} location={filtered.location} courseprice={filtered.salePrice} />
-  ) :
-
-  filtered.url[0] == "E" |
-    filtered.url[0] == "e" ? (
-      <div className="App" style={{ fontFamily: "Arial, sans-serif", padding: "20px" }}>
-        <button
-          type="submit"
-          className="enroll-button"
-          id="example-widget-trigger"
-          onClick={() => this.eventBrite(filtered.url)}
-        >
-     
-          {filtered.enrolltext}
-        </button>
-      </div>
-    ) : (
-      // this.getUrlType2(filtered[2].url)
-      this.getUrlTypeNew(
-        filtered.url,
-        filtered.enrolltext
-      )
-    )
-  }
+                        )}
                       </center>
                     </div>
                   </div>
@@ -1864,13 +1751,13 @@ class CourseEnrollTable extends React.Component {
                               <i class="fa fa-tag"></i>&nbsp;{" "}
                               <strike>{filtered.regularPrice}</strike> &nbsp;
                               {filtered.salePrice} &nbsp;{" "}
-                              {/* <span data-title="The price listed is only for Indian Markets. Please click the enroll button to know the prices for foreign markets.">
+                              <span data-title="The price listed is only for Indian Markets. Please click the enroll button to know the prices for foreign markets.">
                                 <i className="fa fa-info-circle info-detail"></i>
-                              </span> */}
+                              </span>
                             </p>
                           </ul>
                           <center>
-                            {/* {filtered.url[0] == "E" ||
+                            {filtered.url[0] == "E" ||
                             filtered.url[0] == "e" ? (
                               <td>
                                 <button
@@ -1879,7 +1766,7 @@ class CourseEnrollTable extends React.Component {
                                   id="example-widget-trigger"
                                   onClick={() => this.eventBrite(filtered.url)}
                                 >
-                             
+                                  {/* Enroll */}
                                   {filtered.enrolltext}
                                 </button>
                               </td>
@@ -1889,34 +1776,8 @@ class CourseEnrollTable extends React.Component {
                                 filtered.url,
                                 filtered.enrolltext
                               )
-                            )} */}
-     {filtered.salePrice.includes("INR") && course.title == "Certified Scrum Product Owner(CSPO)" ? (
-     <PriceProgressBar course={course} date={filtered.date1} time={filtered.time1} location={filtered.location} courseprice={filtered.salePrice} />
-  ) :
-
-  filtered.url[0] == "E" |
-    filtered.url[0] == "e" ? (
-      <div className="App" style={{ fontFamily: "Arial, sans-serif", padding: "20px" }}>
-        <button
-          type="submit"
-          className="enroll-button"
-          id="example-widget-trigger"
-          onClick={() => this.eventBrite(filtered.url)}
-        >
-     
-          {filtered.enrolltext}
-        </button>
-      </div>
-    ) : (
-      // this.getUrlType2(filtered[2].url)
-      this.getUrlTypeNew(
-        filtered.url,
-        filtered.enrolltext
-      )
-    )
-  }
+                            )}
                           </center>
-                       
                         </div>
                       </div>
                     </div>

@@ -1,15 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import axios from 'axios';
-
-function PricePrograss() {
+import { navigate } from "gatsby"; // <-- Gatsby navigation
+function PricePrograss({course, date, location, time, courseprice}) {
   const [responseId, setResponseId] = useState("");
   const [serverMessage, setServerMessage] = useState("");
-  const [price, setPrice] = useState(14000);
-
+  const [price, setPrice] = useState();
+  const [mycurrency, setMycurrency] = useState();
   // Backend URL
   const backendURL = "https://tryscrumtest.vervebot.io/create-order.php";
 
-  // Check server status
+  useEffect(() => {
+    if (!courseprice) return;
+    
+    // If your courseprice is in the format "17000 INR",
+    // you probably don't need encodeURIComponent here.
+    // But if it might contain special characters, handle carefully.
+    const [amountString, currency] = courseprice.split(" ");
+    setPrice(parseInt(amountString, 10));  // => 17000
+    setMycurrency(currency);               // => 'INR'
+  }, [courseprice]);
   const checkServer = () => {
     axios
       .get(backendURL)
@@ -28,7 +37,6 @@ function PricePrograss() {
       amount: price * 100, // Convert to paise
       currency: "INR",
     };
-
     axios
       .post(backendURL, data, {
         headers: { "Content-Type": "application/json" },
@@ -42,15 +50,25 @@ function PricePrograss() {
       });
   };
 
+  const handleProceedToCheckout = () => {
+ //   const courseName = course.acfcoursePage.options.heroHeading || "";
+    const courseName = course.title || "";
+    // Safely encode your courseName for use in the URL
+    const courseNameEncoded = encodeURIComponent(courseName);
+    const coursedate = encodeURIComponent(date);
+    const coursetime = encodeURIComponent(time);
+    const courelocaton = encodeURIComponent(location);
+    // Example: "/course-checkout?price=14000&courseName=Scrum%20Master"
+    navigate(`/course-checkout?price=${price}&courseName=${courseNameEncoded}&courseDate=${coursedate}&location=${courelocaton}&time=${coursetime}&currency=${mycurrency}`);
+  };
+
   // Open Razorpay payment screen
   const handleRazorpayScreen = async (amount, orderId) => {
     const res = await loadScript("https://checkout.razorpay.com/v1/checkout.js");
-
     if (!res) {
       alert("Failed to load Razorpay SDK.");
       return;
     }
-
     const options = {
       key: "rzp_test_eCBnZYOjhB6B6V", // Replace with your Razorpay key
       amount: price*100,
@@ -70,7 +88,6 @@ function PricePrograss() {
         color: "#F4C430",
       },
     };
-
     const paymentObject = new window.Razorpay(options);
     paymentObject.open();
   };
@@ -87,18 +104,18 @@ function PricePrograss() {
   };
 
   // Handle slider value change
-  const handleSliderChange = (event) => {
-    setPrice(Number(event.target.value));
-  };
+  // const handleSliderChange = (event) => {
+  //   setPrice(Number(event.target.value));
+  // };
 
   return (
     <div className="App" style={{ fontFamily: "Arial, sans-serif", padding: "20px" }}>
       {/* Payment Amount Slider */}
-      <div style={{ marginBottom: "20px" }}>
+      {/* <div style={{ marginBottom: "20px" }}>
         <input
           type="range"
-          min="14500"
-          max="90000"
+          min="16500"
+          max="19500"
           step="500"
           value={price}
           onChange={handleSliderChange}
@@ -119,28 +136,29 @@ function PricePrograss() {
               appearance: none;
               width: 20px;
               height: 20px;
-              background: #F4C430;
+              background: #Ff0000;
               border: 2px solid #333;
               border-radius: 50%;
               cursor: pointer;
               transition: background 0.3s;
             }
             input[type="range"]::-webkit-slider-thumb:hover {
-              background: #e3b320;
+              background: #ff0000;
             }
           `}
         </style>
         <p style={{ fontSize: "18px", textAlign: "center", color: "#fff" }}>
           Selected Amount: <span style={{ fontWeight: "bold" }}>₹{price}</span>
         </p>
-      </div>
+      </div> */}
 
       {/* Payment Button */}
       <button
-        onClick={() => createRazorpayOrder(price)}
+       // onClick={() => createRazorpayOrder(price)}
+       onClick={handleProceedToCheckout}
         style={{
-          backgroundColor: "#F4C430",
-          color: "#333",
+          backgroundColor: "#Ff0000",
+          color: "#fff",
           border: "none",
           borderRadius: "5px",
           padding: "10px 20px",
@@ -149,7 +167,7 @@ function PricePrograss() {
           boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
         }}
       >
-        Pay ₹{price}
+        ENROLL
       </button>
 
       {responseId && <p>Payment ID: {responseId}</p>}
