@@ -62,6 +62,7 @@ const CheckoutPage = () => {
   // For illustration, we do subTotal minus coupon. (Adjust logic as needed.)
   const totalgst = 0.18;
   const gstAmount = subTotal * totalgst;
+  const tempcoupon = subTotal + gstAmount - 2;
   const total = subTotal + gstAmount - couponValue;
   const formatIndianNumber = (num) => {
     return new Intl.NumberFormat('en-IN').format(num);
@@ -176,7 +177,7 @@ const CheckoutPage = () => {
   const submitPromo = () => {
     const trimmedCoupon = coupon.trim();
     if (trimmedCoupon === 'TRY-CSPO-SPL') {
-      setCouponValue(20648);
+      setCouponValue(tempcoupon);
       setCouponError("");
       setCoupon("");
       // Show success message for 5 seconds
