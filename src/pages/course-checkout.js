@@ -216,7 +216,7 @@ const CheckoutPage = () => {
         setSubmissionMessage("");
       }, 5000);
     }
-    else if(trimmedCoupon === 'CSPO-SPL' && courseDate === 'May 03-04, 2025') {
+    else if(trimmedCoupon === 'CSPO-SPCL' && courseDate === 'May 03-04, 2025') {
       setCouponValue(1000);
       setCouponError("");
       setCoupon("");
