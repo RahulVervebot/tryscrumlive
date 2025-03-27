@@ -58,12 +58,13 @@ const CheckoutPage = () => {
   const priceNum = parseFloat(priceString) || 0;
   const curencyString = searchParams.get("mycurrency");
   // Subtotal, total
-  const subTotal = priceNum * participants.length;
+  const withcouponsubTotal = priceNum * participants.length
+  const subTotal = priceNum * participants.length - couponValue;
   // For illustration, we do subTotal minus coupon. (Adjust logic as needed.)
   const totalgst = 0.18;
   const gstAmount = subTotal * totalgst;
   const tempcoupon = subTotal + gstAmount - 2;
-  const total = subTotal + gstAmount - couponValue;
+  const total = subTotal + gstAmount;
   const formatIndianNumber = (num) => {
     return new Intl.NumberFormat('en-IN').format(num);
 };
@@ -185,7 +186,47 @@ const CheckoutPage = () => {
       setTimeout(() => {
         setSubmissionMessage("");
       }, 5000);
-    } else {
+    } else if(trimmedCoupon === 'TRYSCRUM-7' && courseDate === 'Apr 19-20, 2025') {
+      setCouponValue(500);
+      setCouponError("");
+      setCoupon("");
+      // Show success message for 5 seconds
+      setSubmissionMessage("Discount successfully applied!");
+      setTimeout(() => {
+        setSubmissionMessage("");
+      }, 5000);
+    }
+    else if(trimmedCoupon === 'CSPO-SPL' && courseDate === 'Apr 19-20, 2025') {
+      setCouponValue(1000);
+      setCouponError("");
+      setCoupon("");
+      // Show success message for 5 seconds
+      setSubmissionMessage("Discount successfully applied!");
+      setTimeout(() => {
+        setSubmissionMessage("");
+      }, 5000);
+    }
+    else if(trimmedCoupon === 'TRYSCRUM-7' && courseDate === 'May 03-04, 2025') {
+      setCouponValue(500);
+      setCouponError("");
+      setCoupon("");
+      // Show success message for 5 seconds
+      setSubmissionMessage("Discount successfully applied!");
+      setTimeout(() => {
+        setSubmissionMessage("");
+      }, 5000);
+    }
+    else if(trimmedCoupon === 'CSPO-SPL' && courseDate === 'May 03-04, 2025') {
+      setCouponValue(1000);
+      setCouponError("");
+      setCoupon("");
+      // Show success message for 5 seconds
+      setSubmissionMessage("Discount successfully applied!");
+      setTimeout(() => {
+        setSubmissionMessage("");
+      }, 5000);
+    }
+    else {
       setCouponValue(0);
       setCouponError("Invalid code");
       setSubmissionMessage("");
@@ -631,23 +672,25 @@ const CheckoutPage = () => {
 
                 <div className="summary-item">
                   <span>Subtotal:</span>
-                  <span>₹{curencyString}{subTotal.toFixed(2)}</span>
-                </div>
-
-                <div className="summary-item">
-                  <span>GST:</span>
-                  <span>₹{gstAmount.toFixed(2)}</span>
-                </div>
-                
-
+                  <span>₹{curencyString}{withcouponsubTotal.toFixed(2)}</span>
+                </div> 
                 {/* If the coupon is applied, show discount */}
                 {couponValue > 0 && (
+                  <>
                   <div className="summary-item discount">
                     <span>Discount:</span>
                     <span style={{ color: "green" }}>- ₹{couponValue}</span>
-                  </div>
+                  </div>    
+                  <div className="summary-item">
+                <span>Subtotal after discount:</span>
+                <span>₹{curencyString}{subTotal.toFixed(2)}</span>
+                </div>  
+                </>
                 )}
-
+                  <div className="summary-item">
+                  <span>GST:</span>
+                  <span>₹{gstAmount.toFixed(2)}</span>
+                </div>
                 <div className="summary-item total">
                   <span>Total:</span>
                   <span>₹{curencyString}{total.toFixed(2)}</span>
