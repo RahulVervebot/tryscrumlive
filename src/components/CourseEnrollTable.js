@@ -707,9 +707,9 @@ class CourseEnrollTable extends React.Component {
                       </p>
                     </ul>
                     <center>
-      {filtered.salePrice.includes("INR") && course.title == "Certified Scrum Product Owner(CSPO)" && course.title == "Certified Scrum Product Owner(CSPO)" ? (
+      {/* {filtered.salePrice.includes("INR") && course.title == "Certified Scrum Product Owner(CSPO)" && course.title == "Certified Scrum Product Owner(CSPO)" ? (
      <PriceProgressBar course={course} date={filtered.date1} time={filtered.time1} location={filtered.location} courseprice={filtered.salePrice} />
-  ) :
+  ) : */
 
   filtered.url[0] == "E" |
     filtered.url[0] == "e" ? (
@@ -919,9 +919,9 @@ class CourseEnrollTable extends React.Component {
                               filtered.enrolltext
                             )
                           )} */}
-    {filtered.salePrice.includes("INR") && course.title == "Certified Scrum Product Owner(CSPO)" ? (
+    {/* {filtered.salePrice.includes("INR") && course.title == "Certified Scrum Product Owner(CSPO)" ? (
      <PriceProgressBar course={course} date={filtered.date1} time={filtered.time1} location={filtered.location} courseprice={filtered.salePrice} />
-  ) :
+  ) : */
 
   filtered.url[0] == "E" |
     filtered.url[0] == "e" ? (
@@ -1190,9 +1190,9 @@ class CourseEnrollTable extends React.Component {
                     </ul>
                     <center>
 
-                     {filtered.salePrice.includes("INR") && course.title == "Certified Scrum Product Owner(CSPO)" ? (
+                     {/* {filtered.salePrice.includes("INR") && course.title == "Certified Scrum Product Owner(CSPO)" ? (
      <PriceProgressBar course={course} date={filtered.date1} time={filtered.time1} location={filtered.location} courseprice={filtered.salePrice} />
-  ) :
+  ) : */
 
   filtered.url[0] == "E" |
     filtered.url[0] == "e" ? (
@@ -1394,9 +1394,9 @@ class CourseEnrollTable extends React.Component {
                                   filtered.enrolltext
                                 )
                               )} */}
-                        {filtered.salePrice.includes("INR") && course.title == "Certified Scrum Product Owner(CSPO)" ? (
+                        {/* {filtered.salePrice.includes("INR") && course.title == "Certified Scrum Product Owner(CSPO)" ? (
      <PriceProgressBar course={course} date={filtered.date1} time={filtered.time1} location={filtered.location} courseprice={filtered.salePrice} />
-  ) :
+  ) : */
 
   filtered.url[0] == "E" |
     filtered.url[0] == "e" ? (
@@ -1687,9 +1687,9 @@ class CourseEnrollTable extends React.Component {
                           // this.getUrlType2(filtered[2].url)
                           this.getUrlTypeNew(filtered.url, filtered.enrolltext)
                         )} */}
-             {filtered.salePrice.includes("INR") && course.title == "Certified Scrum Product Owner(CSPO)" ? (
+             {/* {filtered.salePrice.includes("INR") && course.title == "Certified Scrum Product Owner(CSPO)" ? (
      <PriceProgressBar course={course} date={filtered.date1} time={filtered.time1} location={filtered.location} courseprice={filtered.salePrice} />
-  ) :
+  ) : */
 
   filtered.url[0] == "E" |
     filtered.url[0] == "e" ? (
@@ -1890,9 +1890,9 @@ class CourseEnrollTable extends React.Component {
                                 filtered.enrolltext
                               )
                             )} */}
-     {filtered.salePrice.includes("INR") && course.title == "Certified Scrum Product Owner(CSPO)" ? (
+     {/* {filtered.salePrice.includes("INR") && course.title == "Certified Scrum Product Owner(CSPO)" ? (
      <PriceProgressBar course={course} date={filtered.date1} time={filtered.time1} location={filtered.location} courseprice={filtered.salePrice} />
-  ) :
+  ) : */
 
   filtered.url[0] == "E" |
     filtered.url[0] == "e" ? (
