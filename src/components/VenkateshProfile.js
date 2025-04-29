@@ -147,7 +147,7 @@ const VenkateshProfile = () => {
                   Organizations. Venkatesh is fluent in 4 languages. He is based
                   in Chennai, India and sets the overall direction for tryScrum.
                   He is the world's first to hold together CST, CEC, CTC, PST,
-                  PKT, Path to CSP Educator,CAL-Educator and ACS-Educator. He
+                  Path to CSP Educator,CAL-Educator and ACS-Educator. He
                   loves reading books, travelling and public speaking. Venkatesh
                   received his B.E. from Anna University in Chennai and his MBA
                   from the University of Madras. He is a PhD scholar at the
