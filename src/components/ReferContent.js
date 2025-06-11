@@ -147,7 +147,7 @@ const CareerContent = () => {
                 Hey there, tryScrum family!<br/>
               </p>
               <p className="lead">
-              We’re so grateful to have you with us, and we’re excited to share a special way for you to earn some extra rewards while helping your friends and colleagues improve their skills. Introducing the tryScrum Referral Program!
+             We’re so grateful to have you, our alumni, with us. We’re excited to share a special way for you to earn some extra rewards while helping your friends and colleagues improve their skills.
               </p>
 
               {/* <p
@@ -193,7 +193,10 @@ const CareerContent = () => {
     <li>
     <b>Earn Your Bonus:</b>Once your friend finishes their workshop, we’ll send you 1000 INR directly to your bank accounts through any convenient mode. It’s that easy!
     </li>
-   
+<li>
+<b>
+***Note: tryScrum Referral Program — exclusively for our Alumni community!</b>
+</li>
     {/* <li>
       Provide feedback to participants and monitor their progress.
     </li> */}
