@@ -193,14 +193,13 @@ const CareerContent = () => {
     <li>
     <b>Earn Your Bonus:</b>Once your friend finishes their workshop, we’ll send you 1000 INR directly to your bank accounts through any convenient mode. It’s that easy!
     </li>
-<li>
-<b>
-***Note: tryScrum Referral Program — exclusively for our Alumni community!</b>
-</li>
+
     {/* <li>
       Provide feedback to participants and monitor their progress.
     </li> */}
   </ul>
+    <b>
+***Note: tryScrum Referral Program — exclusively for our Alumni community!</b>
 </p>
 <br/>
 <h3 style={{"color": "rgb(1, 34, 55)","font-weight": "600", "padding-bottom": "5px"}}>Why Refer tryScrum?</h3>
