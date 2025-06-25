@@ -246,9 +246,17 @@ const Courses5 = (props) => {
 
   const names = props.api;
 
-  const newdata = tablecourses.allWpPost.nodes.filter((item) => {
-    return names.includes(item.title);
-  });
+  // const newdata = tablecourses.allWpPost.nodes.filter((item) => {
+  //   return names.includes(item.title);
+  // });
+  const seenTitles = new Set();
+const newdata = tablecourses.allWpPost.nodes.filter((item) => {
+  if (!names.includes(item.title)) return false;
+  if (seenTitles.has(item.title)) return false;
+  seenTitles.add(item.title);
+  return true;
+});
+
 
   console.log(newdata, "newline-1");
   console.log(tablecourses, "table-1");
