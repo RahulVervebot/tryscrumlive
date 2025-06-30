@@ -83,7 +83,7 @@ const Leadership = () => {
 
      
 
-          <div className="col-lg-6">
+          <{/*div className="col-lg-6">
             <div className="card h-70 border-0">
               
                   <Kiransmall />
@@ -93,7 +93,7 @@ const Leadership = () => {
                   <Link to="/kiran/" className="btn" style={{ backgroundColor:"#8C91AE", color:"white" }}>Visit Profile</Link>
                 </div>
               </div>
-          </div>
+          </div>*/}
 
           <div className="col-lg-6">
             <div className="card h-70 border-0">
