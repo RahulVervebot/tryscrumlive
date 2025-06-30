@@ -9,7 +9,7 @@ import certificate7 from "../assets/images/acc_t.png"
 import certificate8 from "../assets/images/scrum_a_t.png"
 import certificate9 from "../assets/images/PK-PKT@2x.png"
 import certificate10 from "../assets/images/IC-Agile-Authorized-Instructor.png"
-import certificate11 from "../assets/images/pmiacp.png"
+// import certificate11 from "../assets/images/pmiacp.png"
 import certificate12 from "../assets/images/PCC.png"
 import certificate13 from "../assets/images/ase-e.jpg"
 import careerBadges from "../assets/images/career-badges.jpeg"
@@ -274,13 +274,14 @@ Post Graduate Diploma in Strategic Management from Metropolitan Business School
                     style={{ width: "120px", height: "120px" }}
                   />
                 </div>
-                <div className="col-xl-2 col-lg-4 col-md-6 col-6">
+{/*   <div className="col-xl-2 col-lg-4 col-md-6 col-6">
                   <img
                     src={certificate11}
                     alt="tryScrum Trainer Credentials"
                     style={{ width: "120px", height: "120px" }}
                   />
                 </div>
+                */}
                 <div className="col-xl-2 col-lg-4 col-md-6 col-6">
                   <img
                     src={certificate12}
