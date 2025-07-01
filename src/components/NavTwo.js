@@ -19,6 +19,7 @@ import icpent from "../assets/images/icp-ent.png";
 import pale from "../assets/images/pal-e.png";
 import psk from "../assets/images/psk.png";
 import pspo2 from "../assets/images/pspo-2.png";
+import pspoai from "../assets/images/pspoai.png";
 import pspo from "../assets/images/pspo.png";
 import sps from "../assets/images/sps.png";
 import cspo from "../assets/images/new-logos/csposm.png";
@@ -302,6 +303,11 @@ class NavTwo extends Component {
                       <li onClick={this.showHidetoggleclose}>
                         <Link to="/certifications/agile/scrum/product-owner/professional-scrum-product-owner-ii/">
                           Professional Scrum Product Owner II
+                        </Link>
+                      </li>
+                  <li onClick={this.showHidetoggleclose}>
+                        <Link to="/certifications/agile/scrum/product-owner/professional-scrum-product-owner-ai-essentials-training/">
+                          PSPO AI Essentials
                         </Link>
                       </li>
                       {/* <li onClick={this.showHidetoggleclose} >
@@ -662,6 +668,13 @@ class NavTwo extends Component {
                                 <Link to="/certifications/agile/scrum/product-owner/professional-scrum-product-owner-ii/">
                                   <img src={pspo2} />
                                   Professional Scrum Product Owner II
+                                </Link>
+                              </li>
+                                      <div style={{ marginBottom: "5px" }}></div>
+                              <li onClick={this.showHidetoggleclose}>
+                                <Link to="/certifications/agile/scrum/product-owner/professional-scrum-product-owner-ai-essentials-training/">
+                                  <img src={pspoai} />
+                                PSPO AI Essentials
                                 </Link>
                               </li>
                               <div style={{ marginBottom: "5px" }}></div>
