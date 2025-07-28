@@ -212,6 +212,7 @@ At tryScrum, we specialise in Agile role-based and skill-based training. By refe
 
 <p className="pb-0 lead">
 We’re here for you! If you have any questions about the referral program, just shoot us an email at help@tryscrum.com.<br/>
+Note: The tryScrum Referral Program and any ongoing discounts or promotional offers cannot be combined. Referral rewards will only be applicable for participants who enroll at the standard pricing.<br/>
 Thank you for being a valued member of the tryScrum community. Your support helps us grow and make a difference!
 </p>
 <br/>
